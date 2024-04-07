@@ -1,6 +1,6 @@
 import jwt, { Secret } from "jsonwebtoken";
 import Express from 'express';
-import Admin from "../../models/admin.models";
+import Admin from "../../models/admin.model";
 
 const requireAdminAuth = async (req: Express.Request, res: Express.Response, next: Express.NextFunction) => {
   try {
