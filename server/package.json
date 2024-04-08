@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "cross-env NODE_ENV=production ts-node ./index.ts",
+    "start": "nodemon ./index.ts",
     "dev": "node --env-file=.env --watch -r ts-node/register ./index.ts",
     "start:dev": "cross-env NODE_ENV=development nodemon ./index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,8 +20,15 @@
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "crypto-js": "^4.2.0",
+    "dayjs": "^1.11.10",
     "dotenv": "^16.4.5",
     "express": "^4.18.3",
+    "express-ip": "^1.0.4",
+    "express-rate-limit": "^7.2.0",
+    "express-useragent": "^1.0.15",
+    "geoip-lite": "^1.4.10",
+    "ipinfo-express": "^2.0.2",
+    "joi": "^17.12.3",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.2.1",
     "morgan": "^1.10.0",
@@ -29,19 +36,28 @@
     "passport": "^0.7.0",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0",
-    "ts-node": "^10.4.0"
+    "ts-node": "^10.4.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@tsconfig/node-lts": "^20.1.1",
     "@types/bcrypt": "^5.0.2",
+    "@types/bcryptjs": "^2.4.6",
     "@types/cors": "^2.8.17",
+    "@types/crypto-js": "^4.2.2",
     "@types/express": "^4.17.21",
+    "@types/express-useragent": "^1.0.5",
+    "@types/geoip-lite": "^1.4.4",
     "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20.11.26",
     "@types/passport": "^1.0.16",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@types/uuid": "^9.0.8",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "eslint": "^8.57.0",
+    "joi-to-typescript": "^4.13.0",
     "typescript": "^5.4.2"
   }
 }
