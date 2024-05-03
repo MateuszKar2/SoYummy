@@ -4,12 +4,11 @@ import Admin from "../../models/admin.model";
 
 const requireAdminAuth = async (req: Express.Request, res: Express.Response, next: Express.NextFunction) => {
   try {
-    const tokenHeader = req.headers.authorization;
-    if (!tokenHeader) {
+    const token = req.headers.authorization?.split(" ")[1];
+    if (!token) {
       return res.status(401).json({ message: "Unauthorized" });
     }
 
-    const token = tokenHeader.split(" ")[1];
     const SECRET = process.env.SECRET;
     if (!SECRET) {
       return res.status(500).json({ message: "Internal Server Error" });

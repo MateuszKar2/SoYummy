@@ -328,5 +328,5 @@ router.get("/logout", logout);
  *                   example: Server error
  */
 
-router.get("/current", auth, current);
+router.get("/current", current);
 export default router;

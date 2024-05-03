@@ -123,7 +123,7 @@ const signin = async (
 
     const toLowerCaseEmail = email.toLowerCase();
     const user = await findUserByEmail(toLowerCaseEmail);
-
+    
     if (!user) {
       return res.status(401).json({
         status: "Unauthorized",
@@ -212,8 +212,12 @@ const current = async (
   _next: NextFunction
 ): Promise<Response> => {
   try {
-    const token = req.headers.authorization?.split(" ")[1];
+    const token = req.headers.authorization;
 
+    const existingToken = await Token.findOne({
+      accessToken: token
+    })
+    
     if (!token) {
       return res.status(401).json({
         status: "Unauthorized",
@@ -224,10 +228,10 @@ const current = async (
 
     const decodedToken: any = jwt.verify(
       token,
-      process.env.ACCESS_TOKEN_SECRET!
+      process.env.SECRET!
     );
     const userId = decodedToken.userId;
-
+    
     const user = await findUserById(userId);
 
     if (!user) {
