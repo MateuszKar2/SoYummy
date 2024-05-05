@@ -5,7 +5,7 @@ import {
   signin,
   logout,
   current,
-} from "../controllers/auth.controller";
+} from "../controllers/user.controller";
 
 const router: Router = express.Router();
 
@@ -31,6 +31,9 @@ const router: Router = express.Router();
  *             password:
  *               type: string
  *               example: mypassword123
+ *             isConsentGiven:
+ *                type: boolean
+ *                example: false
  *     responses:
  *       201:
  *         description: Created
@@ -100,6 +103,7 @@ const router: Router = express.Router();
  *                   type: string
  *                   example: Server error
  */
+
 
 router.post("/signup", signup);
 /**
@@ -328,5 +332,5 @@ router.get("/logout", logout);
  *                   example: Server error
  */
 
-router.get("/current", auth, current);
+router.get("/current", current);
 export default router;

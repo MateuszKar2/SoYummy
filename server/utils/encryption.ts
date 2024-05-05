@@ -1,6 +1,9 @@
+import dotenv from 'dotenv';
 import CryptoJS from "crypto-js";
 
-const key: string | undefined = process.env.CRYPTO_KEY;
+dotenv.config();
+
+const key = process.env.CRYPTO_KEY;
 
 if (!key) {
   throw new Error("CRYPTO_KEY environment variable is not set.");
