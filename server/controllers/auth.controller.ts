@@ -1,264 +1,251 @@
-import { Request, Response, NextFunction } from "express";
-import jwt from "jsonwebtoken";
-import Joi from "joi";
-import bcrypt from "bcryptjs";
-import { v4 as uuidv4 } from "uuid";
-import User from "../models/user.model";
-import Token from "../models/token.model";
-import { findUserByEmail, findUserById } from "../services/auth.service";
-import * as dotenv from "dotenv";
-import { saveLogInfo } from "../middlewares/logger/logInfo";
-dotenv.config({ path: __dirname + "/.env" });
+import { Request, Response } from 'express';
+import { formatCreatedAt } from '../utils/timeConverter';
+import SuspiciousLogin, {ISuspiciousLogin} from '../models/suspiciousLogin.model';
+import Preference from '../models/preference.model';
+import {UserDocument} from '../models/user.model';
+import { saveLogInfo } from '../middlewares/logger/logInfo';
+import getCurrentContextData from '../utils/contextData';
 
-const LOG_TYPE = {
-  SIGN_IN: "sign in",
-  LOGOUT: "logout",
-} as const;
-
-const LEVEL = {
-  INFO: "info",
-  ERROR: "error",
-  WARN: "warn",
-} as const;
-
-const MESSAGE = {
-  SIGN_IN_ATTEMPT: "User attempting to sign in",
-  SIGN_IN_ERROR: "Error occurred while signing in user: ",
-  INCORRECT_EMAIL: "Incorrect email",
-  INCORRECT_PASSWORD: "Incorrect password",
-  DEVICE_BLOCKED: "Sign in attempt from blocked device",
-  CONTEXT_DATA_VERIFY_ERROR: "Context data verification failed",
-  MULTIPLE_ATTEMPT_WITHOUT_VERIFY:
-    "Multiple sign in attempts detected without verifying identity.",
-  LOGOUT_SUCCESS: "User has logged out successfully",
-} as const;
-
-interface UserInput {
-  email: string;
-  password: string;
+interface SuspiciousContextData {
+  mismatchedProps?: string[];
+  currentContextData?: SuspiciousContextData;
+  time?: string;
+  id?: string;
+  ip?: string;
+  country?: string;
+  city?: string;
+  browser?: string;
+  platform?: string;
+  os?: string;
+  device?: string;
+  deviceType?: string;
 }
 
-const userSchema = Joi.object<UserInput>({
-  email: Joi.string().email({ minDomainSegments: 2 }).required(),
-  password: Joi.string().min(7).required(),
-});
-
-const hashPassword = async (password: string): Promise<string> => {
-  const salt = await bcrypt.genSalt(10);
-  const hashPassword = await bcrypt.hash(password, salt);
-  return hashPassword;
+export enum types {
+  NO_CONTEXT_DATA = "no_context_data",
+  MATCH = "match",
+  BLOCKED = "blocked",
+  SUSPICIOUS = "suspicious",
+  ERROR = "error",
 };
 
-const validPassword = async (
-  password: string,
-  hashPassword: string
-): Promise<boolean> => bcrypt.compare(password, hashPassword);
+const isTrustedDevice = (currentContextData: SuspiciousContextData, userContextData: SuspiciousContextData): boolean =>
+  Object.keys(userContextData).every(
+    (key) => userContextData[key as keyof SuspiciousContextData] === currentContextData[key as keyof SuspiciousContextData]
+  );
 
-const signup = async (
-  req: Request,
-  res: Response,
-  _next: NextFunction
-): Promise<Response> => {
-  try {
-    const { value, error } = userSchema.validate(req.body);
-    const { email, password } = value;
-
-    if (error) {
-      return res.status(400).json({ message: error.message });
-    }
-
-    const toLowerCaseEmail = email.toLowerCase();
-    const user = await findUserByEmail(toLowerCaseEmail);
-
-    if (user) {
-      return res.status(409).json({
-        status: "Error",
-        code: 409,
-        message: "Email in use",
-        data: "Conflict",
-      });
-    }
-
-    const hashedPassword = await hashPassword(password);
-
-    const verificationToken = uuidv4();
-
-    await new User({
-      email: toLowerCaseEmail,
-      password: hashedPassword,
-      verificationToken: verificationToken,
-    }).save();
-
-    return res.status(201).json({
-      status: "Created",
-      code: 201,
-      data: {
-        user: {
-          email: toLowerCaseEmail,
-        },
-      },
-    });
-  } catch (err) {
-    console.error(err);
-    return res.status(500).json({
-      status: "Error",
-      code: 500,
-      message: "Server error",
-    });
-  }
+const isSuspiciousContextChanged = (oldContextData: SuspiciousContextData, newContextData: SuspiciousContextData): boolean => {
+  return Object.keys(oldContextData).some(
+    (key) => oldContextData[key as keyof SuspiciousContextData] !== newContextData[key as keyof SuspiciousContextData]
+  );
 };
 
-const signin = async (
-  req: Request,
-  res: Response,
-  _next: NextFunction
-): Promise<Response> => {
+const isOldDataMatched = (oldSuspiciousContextData: SuspiciousContextData, userContextData: SuspiciousContextData): boolean => {
+  return Object.keys(oldSuspiciousContextData).every(
+    (key) => oldSuspiciousContextData[key as keyof SuspiciousContextData] === userContextData[key as keyof SuspiciousContextData]
+  );
+};
+
+const getOldSuspiciousContextData = (_id: string, currentContextData: SuspiciousContextData) => {
+  return SuspiciousLogin.findOne({
+    user: _id,
+    ip: currentContextData.ip,
+    country: currentContextData.country,
+    city: currentContextData.city,
+    browser: currentContextData.browser,
+    platform: currentContextData.platform,
+    os: currentContextData.os,
+    device: currentContextData.device,
+    deviceType: currentContextData.deviceType,
+  })
+}
+const addNewSuspiciousLogin = async (_id: string, existingUser: UserDocument, currentContextData: SuspiciousContextData): Promise<ISuspiciousLogin> => {
+  const newSuspiciousLogin = new SuspiciousLogin({
+    user: _id,
+    email: existingUser.email,
+    ip: currentContextData.ip,
+    country: currentContextData.country,
+    city: currentContextData.city,
+    browser: currentContextData.browser,
+    platform: currentContextData.platform,
+    os: currentContextData.os,
+    device: currentContextData.device,
+    deviceType: currentContextData.deviceType,
+  });
+
+  return await newSuspiciousLogin.save();
+};
+
+export const verifyContextData = async (req: Request, existingUser: UserDocument): Promise<types | SuspiciousContextData> => {
   try {
-    const { value, error } = userSchema.validate(req.body);
-    const { email, password } = value;
+    const { _id } = existingUser;
+    const userContextDataRes = await Preference.findOne({ user: _id }) as ISuspiciousLogin;
 
-    if (error) {
-      return res.status(400).json({ message: error.message });
+    if (!userContextDataRes) {
+      return types.NO_CONTEXT_DATA;
     }
 
-    const toLowerCaseEmail = email.toLowerCase();
-    const user = await findUserByEmail(toLowerCaseEmail);
-    
-    if (!user) {
-      return res.status(401).json({
-        status: "Unauthorized",
-        code: 401,
-        message: "Email or password is wrond",
-        data: "Unauthorized",
-      });
-    }
-    const isPasswordValid = await validPassword(password, user.password);
+    const userContextData = {
+      ip: userContextDataRes.ip,
+      country: userContextDataRes.country,
+      city: userContextDataRes.city,
+      browser: userContextDataRes.browser,
+      platform: userContextDataRes.platform,
+      os: userContextDataRes.os,
+      device: userContextDataRes.device,
+      deviceType: userContextDataRes.deviceType,
+    };
 
-    if (!isPasswordValid) {
-      return res.status(401).json({
-        status: "Unauthorized",
-        code: 401,
-        message: "Email or password is wrong",
-        data: "Unauthorized",
-      });
+    const currentContextData = getCurrentContextData(req);
+
+    if (isTrustedDevice(currentContextData, userContextData)) {
+      return types.MATCH;
     }
 
-    const accessToken = jwt.sign({ userId: user._id }, process.env.SECRET!, {
-      expiresIn: "6h",
-    });
-
-    const refreshToken = jwt.sign(
-      { userId: user._id },
-      process.env.REFRESH_TOKEN!
+    const oldSuspiciousContextData = await getOldSuspiciousContextData(
+      _id,
+      currentContextData
     );
 
-    const tokentDoc = new Token({
-      user: user._id,
-      refreshToken: refreshToken,
-      accessToken: accessToken,
-    });
-    await tokentDoc.save();
-    return res.json({
-      status: "Success",
-      code: 200,
-      token: accessToken,
-      user: {
-        email: user.email,
-      },
-    });
-  } catch (err) {
-    console.error(err);
-    return res.status(500).json({
-      status: "Error",
-      code: 500,
-      message: "Server error",
-    });
-  }
-};
+    if (oldSuspiciousContextData) {
+      if (oldSuspiciousContextData.isBlocked) return types.BLOCKED;
+      if (oldSuspiciousContextData.isTrusted) return types.MATCH;
+    }
 
-const logout = async (
-  req: Request,
-  res: Response,
-  _next: NextFunction
-): Promise<void> => {
-  try {
-    const accessToken = req.headers.authorization?.split(" ")[1] ?? null;
+    let newSuspiciousData: SuspiciousContextData = {};
+    if (
+      oldSuspiciousContextData &&
+      isSuspiciousContextChanged(oldSuspiciousContextData, currentContextData)
+    ) {
+      const {
+        ip: suspiciousIp,
+        country: suspiciousCountry,
+        city: suspiciousCity,
+        browser: suspiciousBrowser,
+        platform: suspiciousPlatform,
+        os: suspiciousOs,
+        device: suspiciousDevice,
+        deviceType: suspiciousDeviceType,
+      } = oldSuspiciousContextData;
 
-    if (accessToken) {
-      await Token.deleteOne({ accessToken });
-      await saveLogInfo(
-        null,
-        MESSAGE.LOGOUT_SUCCESS,
-        LOG_TYPE.LOGOUT,
-        LEVEL.INFO
+      if (
+        suspiciousIp !== currentContextData.ip ||
+        suspiciousCountry !== currentContextData.country ||
+        suspiciousCity !== currentContextData.city ||
+        suspiciousBrowser !== currentContextData.browser ||
+        suspiciousDevice !== currentContextData.device ||
+        suspiciousDeviceType !== currentContextData.deviceType ||
+        suspiciousPlatform !== currentContextData.platform ||
+        suspiciousOs !== currentContextData.os
+      ) {
+        //  Suspicious login data found, but it doesn't match the current context data, so we add new suspicious login data
+        const res = await addNewSuspiciousLogin(
+          _id,
+          existingUser,
+          currentContextData
+        );
+
+        newSuspiciousData = {
+          time: formatCreatedAt(res.createdAt),
+          ip: res.ip,
+          country: res.country,
+          city: res.city,
+          browser: res.browser,
+          platform: res.platform,
+          os: res.os,
+          device: res.device,
+          deviceType: res.deviceType,
+        };
+      } else {
+        // increase the unverifiedAttempts count by 1
+        await SuspiciousLogin.findByIdAndUpdate(
+          oldSuspiciousContextData._id,
+          {
+            $inc: { unverifiedAttempts: 1 },
+          },
+          { new: true }
+        );
+        //  If the unverifiedAttempts count is greater than or equal to 3, then we block the user
+        if (oldSuspiciousContextData.unverifiedAttempts >= 3) {
+          await SuspiciousLogin.findByIdAndUpdate(
+            oldSuspiciousContextData._id,
+            {
+              isBlocked: true,
+              isTrusted: false,
+            },
+            { new: true }
+          );
+
+          await saveLogInfo(
+            req,
+            "Device blocked due to too many unverified login attempts",
+            "sign in",
+            "warn"
+          );
+
+          return types.BLOCKED;
+        }
+
+        // Suspicious login data found, and it matches the current context data, so we return "already_exists"
+        return types.SUSPICIOUS;
+      }
+    } else if (
+      oldSuspiciousContextData &&
+      isOldDataMatched(oldSuspiciousContextData, currentContextData)
+    ) {
+      return types.MATCH;
+    } else {
+      //  No previous suspicious login data found, so we create a new one
+      const res = await addNewSuspiciousLogin(
+        _id,
+        existingUser,
+        currentContextData
       );
+
+      newSuspiciousData = {
+        time: formatCreatedAt(res.createdAt),
+        id: res._id,
+        ip: res.ip,
+        country: res.country,
+        city: res.city,
+        browser: res.browser,
+        platform: res.platform,
+        os: res.os,
+        device: res.device,
+        deviceType: res.deviceType,
+      };
     }
-    res.status(200).json({
-      message: "Logout successfully",
-    });
-  } catch (err: any) {
-    await saveLogInfo(null, err.message, LOG_TYPE.LOGOUT, LEVEL.ERROR);
-    res.status(500).json({
-      status: "Error",
-      code: 500,
-      message: "Server error",
-    });
+
+    const mismatchedProps = [];
+
+    if (userContextData.ip !== newSuspiciousData.ip) {
+      mismatchedProps.push("ip");
+    }
+    if (userContextData.browser !== newSuspiciousData.browser) {
+      mismatchedProps.push("browser");
+    }
+    if (userContextData.device !== newSuspiciousData.device) {
+      mismatchedProps.push("device");
+    }
+    if (userContextData.deviceType !== newSuspiciousData.deviceType) {
+      mismatchedProps.push("deviceType");
+    }
+    if (userContextData.country !== newSuspiciousData.country) {
+      mismatchedProps.push("country");
+    }
+    if (userContextData.city !== newSuspiciousData.city) {
+      mismatchedProps.push("city");
+    }
+
+    if (mismatchedProps.length > 0) {
+      return {
+        mismatchedProps: mismatchedProps,
+        currentContextData: newSuspiciousData,
+      };
+    }
+
+    return types.MATCH;
+  } catch (error) {
+    return types.ERROR;
   }
 };
-
-const current = async (
-  req: Request,
-  res: Response,
-  _next: NextFunction
-): Promise<Response> => {
-  try {
-    const token = req.headers.authorization;
-
-    const existingToken = await Token.findOne({
-      accessToken: token
-    })
-    
-    if (!token) {
-      return res.status(401).json({
-        status: "Unauthorized",
-        code: 401,
-        message: "Not authorized",
-      });
-    }
-
-    const decodedToken: any = jwt.verify(
-      token,
-      process.env.SECRET!
-    );
-    const userId = decodedToken.userId;
-    
-    const user = await findUserById(userId);
-
-    if (!user) {
-      return res.status(404).json({
-        status: "Not found",
-        code: 404,
-        message: "User not found",
-      });
-    }
-
-    return res.json({
-      status: "Success",
-      code: 200,
-      data: {
-        currentUser: {
-          email: user.email,
-        },
-      },
-    });
-  } catch (err) {
-    console.error(err);
-    return res.status(500).json({
-      status: "Error",
-      code: 500,
-      message: "Server error",
-    });
-  }
-};
-
-export { signup, signin, logout, current };
