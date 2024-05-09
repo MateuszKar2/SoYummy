@@ -1,18 +1,14 @@
-// TODO: Naprwic błąd związany z tworzenie nowego użytkownika
-
 import { Request, Response, NextFunction } from "express";
 import { ParamsDictionary, Query } from "express-serve-static-core";
 import jwt from "jsonwebtoken";
-import Joi, { ref } from "joi";
 import bcrypt from "bcryptjs";
-import { v4 as uuidv4 } from "uuid";
 import User from "../models/user.model";
 import Token from "../models/token.model";
-import { findUserByEmail, findUserById } from "../services/auth.service";
 import * as dotenv from "dotenv";
 import { saveLogInfo } from "../middlewares/logger/logInfo";
 import { verifyContextData, types } from "../controllers/auth.controller";
 import Preference from "../models/preference.model";
+import { send } from "../services/email.service";
 dotenv.config({ path: __dirname + "/.env" });
 
 const LOG_TYPE = {
@@ -38,27 +34,6 @@ const MESSAGE = {
   LOGOUT_SUCCESS: "User has logged out successfully",
 } as const;
 
-interface UserInput {
-  email: string;
-  password: string;
-}
-
-const userSchema = Joi.object<UserInput>({
-  email: Joi.string().email({ minDomainSegments: 2 }).required(),
-  password: Joi.string().min(7).required(),
-});
-
-const hashPassword = async (password: string): Promise<string> => {
-  const salt = await bcrypt.genSalt(10);
-  const hashPassword = await bcrypt.hash(password, salt);
-  return hashPassword;
-};
-
-const validPassword = async (
-  password: string,
-  hashPassword: string
-): Promise<boolean> => bcrypt.compare(password, hashPassword);
-
 const signup = async (
   req: Request,
   res: Response,
@@ -69,7 +44,6 @@ const signup = async (
     const isConsentGiven = JSON.parse(req.body.isConsentGiven);
     const defaultAvatar =
       "https://raw.githubusercontent.com/nz-m/public-files/main/dp.jpg";
-  
     const emailDomain = req.body.email.split("@")[1];
     const role = emailDomain === "soyummy.com" ? "admin" : "general";
     
@@ -80,18 +54,36 @@ const signup = async (
       role: role,
       isEmailVerified: isConsentGiven,
     });
-  
+   
     try {
       await newUser.save();
       
+      const newToken = new Token({user: newUser._id});
+      
+      await newToken.save();
+
       if(newUser.isNew) {
         throw new Error("Failed to add user");
       }
       
       if(isConsentGiven === false) {
         res.status(201).json({
-          message: "User added successfully."
+          message: "User added successfully.",
+          user: {
+            newUser
+          },
+          token: {
+            newToken
+          }
         })
+
+        const verificationToken = await Token.findOne({user: newUser._id});
+        if (!verificationToken) {
+          return res.status(404).json({ message: "Token not found." });
+        }
+
+        send(newUser.email, verificationToken.verificationToken);
+        
       } else {
         _next();
       }
@@ -122,11 +114,8 @@ const signin = async (
     LOG_TYPE.SIGN_IN,
     LEVEL.INFO
   );
-
+  const { email, password } = req.body;
   try {
-    const { value, error } = userSchema.validate(req.body);
-    const { email, password } = value;
-
     const existingUser = await User.findOne({
       email: email,
     });

@@ -15,6 +15,8 @@ import swaggerJsDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
 import Database from "./config/database";
 import authRouter from "./routes/auth.routes";
+import subscribeRouter from "./routes/subscribe.routes";
+import verifyRouter from "./routes/verify.routes";
 dotenv.config({ path: __dirname + "/.env" });
 
 let app: Express.Application | undefined = undefined;
@@ -80,7 +82,8 @@ const swaggerOptions = {
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use("/auth/users", authRouter);
-// app.use("/subscribe");
+app.use("/auth/subscribe", subscribeRouter);
+app.use("/auth/verify", verifyRouter);
 // app.use("/recipes");
 // app.use("/search");
 // app.use("/ingredients");

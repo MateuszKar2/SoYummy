@@ -27,10 +27,10 @@ const router: Router = express.Router();
  *           properties:
  *             email:
  *               type: string
- *               example: user@example.com
+ *               example: mateusz.potocki92@gmail.com
  *             password:
  *               type: string
- *               example: mypassword123
+ *               example: 123123
  *             isConsentGiven:
  *                type: boolean
  *                example: false
@@ -124,10 +124,10 @@ router.post("/signup", signup);
  *           properties:
  *             email:
  *               type: string
- *               example: user@example.com
+ *               example: mateusz.potocki92@gmail.com
  *             password:
  *               type: string
- *               example: mypassword123
+ *               example: 123123
  *     responses:
  *       200:
  *         description: Success

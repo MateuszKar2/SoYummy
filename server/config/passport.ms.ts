@@ -2,6 +2,9 @@ import mongoose, { ConnectOptions } from "mongoose";
 
 mongoose.set("strictQuery", false);
 
+/**
+ * Database class to connect and disconnect from MongoDB
+ */
 class Database {
   private uri: string;
   private options: ConnectOptions;
