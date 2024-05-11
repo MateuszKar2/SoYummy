@@ -8,7 +8,6 @@ import * as dotenv from "dotenv";
 import { saveLogInfo } from "../middlewares/logger/logInfo";
 import { verifyContextData, types } from "../controllers/auth.controller";
 import Preference from "../models/preference.model";
-import { send } from "../services/email.service";
 dotenv.config({ path: __dirname + "/.env" });
 
 const LOG_TYPE = {
@@ -39,61 +38,41 @@ const signup = async (
   res: Response,
   _next: NextFunction
 ): Promise<Response | void> => {
-    let newUser;
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    const isConsentGiven = JSON.parse(req.body.isConsentGiven);
-    const defaultAvatar =
-      "https://raw.githubusercontent.com/nz-m/public-files/main/dp.jpg";
-    const emailDomain = req.body.email.split("@")[1];
-    const role = emailDomain === "soyummy.com" ? "admin" : "general";
-    
-    newUser = new User({
-      email: req.body.email,
-      password: hashedPassword,
-      avatar: defaultAvatar,
-      role: role,
-      isEmailVerified: isConsentGiven,
+  let newUser;
+  const hashedPassword = await bcrypt.hash(req.body.password, 10);
+  const isConsentGiven = JSON.parse(req.body.isConsentGiven);
+  const defaultAvatar =
+    "https://raw.githubusercontent.com/nz-m/public-files/main/dp.jpg";
+  const emailDomain = req.body.email.split("@")[1];
+  const role = emailDomain === "soyummy.com" ? "admin" : "general";
+
+  newUser = new User({
+    email: req.body.email,
+    password: hashedPassword,
+    avatar: defaultAvatar,
+    role: role,
+  });
+
+  try {
+    await newUser.save();
+
+    if (newUser.isNew) {
+      throw new Error("Failed to add user");
+    }
+
+    if (isConsentGiven === false) {
+      res.status(201).json({
+        message: "User added successfully.",
+        user: { newUser },
+      });
+    } else {
+      _next();
+    }
+  } catch (err) {
+    res.status(400).json({
+      message: "Failed to add user",
     });
-   
-    try {
-      await newUser.save();
-      
-      const newToken = new Token({user: newUser._id});
-      
-      await newToken.save();
-
-      if(newUser.isNew) {
-        throw new Error("Failed to add user");
-      }
-      
-      if(isConsentGiven === false) {
-        res.status(201).json({
-          message: "User added successfully.",
-          user: {
-            newUser
-          },
-          token: {
-            newToken
-          }
-        })
-
-        const verificationToken = await Token.findOne({user: newUser._id});
-        if (!verificationToken) {
-          return res.status(404).json({ message: "Token not found." });
-        }
-
-        send(newUser.email, verificationToken.verificationToken);
-        
-      } else {
-        _next();
-      }
-    } catch (err) {
-      console.log(err);
-      
-      res.status(400).json({
-        message: "Failed to add user",
-      })
-    }  
+  }
 };
 
 interface CustomRequest
@@ -114,12 +93,14 @@ const signin = async (
     LOG_TYPE.SIGN_IN,
     LEVEL.INFO
   );
-  const { email, password } = req.body;
   try {
+    const { email, password } = req.body;
     const existingUser = await User.findOne({
-      email: email,
+      email: { $eq: email },
     });
 
+    console.log("existingUser", existingUser);
+    
     if (!existingUser) {
       await saveLogInfo(
         req,
@@ -129,24 +110,6 @@ const signin = async (
       );
 
       return res.status(404).json({
-        message: "Invalid credentials",
-      });
-    }
-
-    const isPasswordCorrect = await bcrypt.compare(
-      password,
-      existingUser.password
-    );
-
-    if (!isPasswordCorrect) {
-      await saveLogInfo(
-        req,
-        MESSAGE.INCORRECT_PASSWORD,
-        LOG_TYPE.SIGN_IN,
-        LEVEL.ERROR
-      );
-
-      return res.status(400).json({
         message: "Invalid credentials",
       });
     }
@@ -197,7 +160,7 @@ const signin = async (
           LEVEL.WARN
         );
 
-        return res.status(403).json({
+        return res.status(401).json({
           message: `You've temporarily been blocked due to suspicious login activity. We have already sent a verification email to your registered email address. 
           Please follow the instructions in the email to verify your identity and gain access to your account.
 
@@ -212,8 +175,8 @@ const signin = async (
         "mismatchedProps" in contextDataResult
       ) {
         const mismatchedProps = contextDataResult.mismatchedProps;
+        const currentContextData = contextDataResult.currentContextData;
         if (mismatchedProps) {
-          const currentContextData = contextDataResult.currentContextData;
           if (
             mismatchedProps.some((prop) =>
               [
@@ -246,14 +209,16 @@ const signin = async (
       expiresIn: "6h",
     });
 
-    const refreshToken = jwt.sign(payload, process.env.REFRESH_TOKEN!);
-
-    const tokentDoc = new Token({
-      user: existingUser._id,
-      refreshToken: refreshToken,
-      accessToken: accessToken,
+    const refreshToken = jwt.sign(payload, process.env.REFRESH_TOKEN!, {
+      expiresIn: "7d",
     });
-    await tokentDoc.save();
+
+    const newRefreshToken  = new Token({
+      user: existingUser._id,
+      refreshToken,
+      accessToken,
+    });
+    await newRefreshToken .save();
 
     return res.json({
       accessToken,
@@ -309,18 +274,18 @@ const logout = async (
   }
 };
 
-const current = async (
+const refreshToken = async (
   req: Request,
   res: Response,
   _next: NextFunction
-): Promise<Response> => {
+) => {
   try {
-    const token = req.headers.authorization;
+    const refreshToken = req.headers.authorization;
+    
     const existingToken = await Token.findOne({
-      accessToken: token,
+      accessToken: { $eq: refreshToken },
     });
 
-    console.log(existingToken);
     if (!existingToken) {
       return res.status(401).json({
         message: "Invalid refresh token",
@@ -328,11 +293,18 @@ const current = async (
     }
 
     const existingUser = await User.findById(existingToken.user);
-    console.log(existingUser);
-
     if (!existingUser) {
       return res.status(404).json({
-        message: "User not found",
+        message: "Invalid refresh token",
+      });
+    }
+
+    const refreshTokenExpiresAt =
+      (jwt.decode(existingToken.refreshToken) as jwt.JwtPayload).exp! * 1000;
+    if (Date.now() >= refreshTokenExpiresAt) {
+      await existingToken.deleteOne();
+      return res.status(401).json({
+        message: "Refresh token expired",
       });
     }
 
@@ -345,18 +317,16 @@ const current = async (
       expiresIn: "6h",
     });
 
-    return res.status(200).json({
+    res.status(200).json({
       accessToken,
       refreshToken: existingToken.refreshToken,
       accessTokenUpdatedAt: new Date().toLocaleString(),
     });
   } catch (err) {
-    console.error(err);
-    return res.status(500).json({
-      status: "Error",
-      code: 500,
-      message: "Server error",
+    res.status(500).json({
+      message: "Internal server error",
     });
   }
 };
-export { signin, signup, logout, current };
+
+export { signin, signup, logout, refreshToken };
