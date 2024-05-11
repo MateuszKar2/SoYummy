@@ -2,6 +2,11 @@ import mongoose, { ConnectOptions } from "mongoose";
 
 mongoose.set("strictQuery", false);
 
+/**
+ * Database class to connect and disconnect from MongoDB
+ * @param uri
+ * @param options
+ */
 class Database {
   private uri: string;
   private options: ConnectOptions;
@@ -11,6 +16,10 @@ class Database {
     this.options = options;
   }
 
+  /**
+   * Connect to MongoDB
+  
+   */
   async connect(): Promise<void> {
     try {
       await mongoose.connect(this.uri, this.options);
@@ -22,6 +31,10 @@ class Database {
     }
   }
 
+
+  /**
+   * Disconnect from MongoDB
+   */
   async disconnect(): Promise<void> {
     try {
       await mongoose.disconnect();
