@@ -50,19 +50,19 @@ db.connect().catch((err: any) =>
  * Setup Express
  */
 
-app = Express();
-app.use(Express.urlencoded({ extended: true }));
-app.use(passport.initialize());
-
 const allowedOrigins = ["http://localhost:3000"];
 
 const options: cors.CorsOptions = {
   origin: allowedOrigins,
 };
 
+app = Express();
 app.use(cors(options));
 app.use(Express.json());
+app.use(Express.urlencoded({ extended: true }));
+app.use(passport.initialize());
 app.use(morgan("dev"));
+import "./config/passport.ms";
 
 /**
  * Routes
@@ -80,6 +80,10 @@ const swaggerOptions = {
 };
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
+app.get("/server-status", (req, res) => {
+  res.status(200).json({ message: "Server is up and running!" });
+});
+
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use("/auth/users", authRouter);
 app.use("/auth/subscribe", subscribeRouter);
@@ -90,6 +94,7 @@ app.use("/auth/verify", verifyRouter);
 // app.use("/ownRecipes");
 // app.use("/popular-reciptes");
 // app.use("/schopping-list");
+
 process.on("SIGINT", async () => {
   try {
     await db.disconnect();
