@@ -1,11 +1,19 @@
 import express, { Router } from "express";
+import * as useragent from "express-useragent";
+import * as requestIp from "request-ip";
 import auth from "../middlewares/auth/auth";
 import {
   signup,
   signin,
   logout,
-  current,
+  refreshToken,
 } from "../controllers/user.controller";
+import { sendVerificationEmail } from "../middlewares/users/verifyEmail";
+import { sendLoginVerification } from "../middlewares/users/verifyLogin";
+import passport from "passport";
+import decodeToken from "../middlewares/auth/decodeToken";
+import { addUserValidator, addUserValidatorHandler } from "../middlewares/users/usersValidator";
+const requireAuth = passport.authenticate("jwt", { session: false });
 
 const router: Router = express.Router();
 
@@ -33,7 +41,7 @@ const router: Router = express.Router();
  *               example: 123123
  *             isConsentGiven:
  *                type: boolean
- *                example: false
+ *                example: true
  *     responses:
  *       201:
  *         description: Created
@@ -104,8 +112,13 @@ const router: Router = express.Router();
  *                   example: Server error
  */
 
-
-router.post("/signup", signup);
+router.post(
+  "/signup", 
+  addUserValidator, 
+  addUserValidatorHandler, 
+  signup, 
+  sendVerificationEmail
+);
 /**
  * @swagger
  * /auth/users/signin:
@@ -198,7 +211,13 @@ router.post("/signup", signup);
  *                   example: Server error
  */
 
-router.post("/signin", signin);
+router.post(
+  "/signin",
+  requestIp.mw(),
+  useragent.express(),
+  signin,
+  sendLoginVerification
+);
 /**
  * @swagger
  * /auth/users/logout:
@@ -266,10 +285,11 @@ router.post("/signin", signin);
  */
 
 router.get("/logout", logout);
+
 /**
  * @swagger
  * /auth/users/current:
- *   get:
+ *   post:
  *     summary: Get current user information
  *     description: Retrieve information about the currently authenticated user.
  *     tags:
@@ -331,6 +351,5 @@ router.get("/logout", logout);
  *                   type: string
  *                   example: Server error
  */
-
-router.get("/current", current);
+router.post("/current", refreshToken);
 export default router;
