@@ -13,7 +13,7 @@ Aby uruchomić serwer, musisz utworzyć plik `.env` w katalogu `server`. Plik te
 Przykładowy plik `.env` może wyglądać tak:
 
 ## Modele
-Serwer składa się z różnych modeli, które są używane do strukturyzacji i manipulacji danymi. Poniżej przedstawiamy dwa z tych modeli.
+Serwer składa się z różnych modeli, które są używane do strukturyzacji i manipulacji danymi. Poniżej przedstawiamy główne modele stosowane w aplikacji.
 
 ## Model User
 
