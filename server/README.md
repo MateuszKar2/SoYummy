@@ -1,5 +1,18 @@
 # Serwer
 
+## Konfiguracja .env
+Aby uruchomić serwer, musisz utworzyć plik `.env` w katalogu `server`. Plik ten powinien posiadać następujące zmienne środowiskowe:
+
+- `DB_URI`: URI do Twojej bazy danych MongoDB. Powinno to wyglądać mniej więcej tak: `mongodb+srv://<username>:<password>@cluster0.mongodb.net/<dbname>?retryWrites=true&w=majority`
+- `ACCESS_TOKEN_SECRET`: Sekret używany do podpisywania tokenów dostępu. Powinien to być długi, losowy ciąg znaków.
+- `REFRESH_TOKEN_SECRET`: Sekret używany do podpisywania tokenów odświeżających. Powinien to być długi, losowy ciąg znaków.
+- `EMAIL_SERVICE`: Nazwa usługi email, którą chcesz użyć do wysyłania emaili (np. 'gmail').
+- `EMAIL_USER`: Adres email, z którego chcesz wysyłać maile.
+- `EMAIL_PASSWORD`: Hasło do konta email, z którego chcesz wysyłać maile.
+
+Przykładowy plik `.env` może wyglądać tak:
+
+## Modele
 Serwer składa się z różnych modeli, które są używane do strukturyzacji i manipulacji danymi. Poniżej przedstawiamy dwa z tych modeli.
 
 ## Model User

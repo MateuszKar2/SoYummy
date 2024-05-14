@@ -1,7 +1,6 @@
 import express, { Router } from "express";
 import * as useragent from "express-useragent";
 import * as requestIp from "request-ip";
-import auth from "../middlewares/auth/auth";
 import {
   signup,
   signin,
@@ -10,10 +9,7 @@ import {
 } from "../controllers/user.controller";
 import { sendVerificationEmail } from "../middlewares/users/verifyEmail";
 import { sendLoginVerification } from "../middlewares/users/verifyLogin";
-import passport from "passport";
-import decodeToken from "../middlewares/auth/decodeToken";
 import { addUserValidator, addUserValidatorHandler } from "../middlewares/users/usersValidator";
-const requireAuth = passport.authenticate("jwt", { session: false });
 
 const router: Router = express.Router();
 
