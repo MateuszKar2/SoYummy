@@ -19,6 +19,7 @@ import subscribeRouter from "./routes/subscribe.routes";
 import verifyRouter from "./routes/verify.routes";
 import recipesRouter from "./routes/recipes.routes";
 import ingredientsRouter from "./routes/ingredients.routes";
+import searchRouter from "./routes/search.routes";
 import { initializeData } from "./utils/dataInitialization";
 dotenv.config({ path: __dirname + "/.env" });
 
@@ -96,7 +97,7 @@ app.use("/auth/users", authRouter);
 app.use("/auth/subscribe", subscribeRouter);
 app.use("/auth/verify", verifyRouter);
 app.use("/recipes", recipesRouter);
-// app.use("/search");
+app.use("/search", searchRouter);
 app.use("/ingredients", ingredientsRouter);
 // app.use("/ownRecipes");
 // app.use("/popular-reciptes");
