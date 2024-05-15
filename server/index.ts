@@ -18,7 +18,8 @@ import authRouter from "./routes/auth.routes";
 import subscribeRouter from "./routes/subscribe.routes";
 import verifyRouter from "./routes/verify.routes";
 import recipesRouter from "./routes/recipes.routes";
-import { initializeData } from "./utils/dataInicialization";
+import ingredientsRouter from "./routes/ingredients.routes";
+import { initializeData } from "./utils/dataInitialization";
 dotenv.config({ path: __dirname + "/.env" });
 
 let app: Express.Application | undefined = undefined;
@@ -96,7 +97,7 @@ app.use("/auth/subscribe", subscribeRouter);
 app.use("/auth/verify", verifyRouter);
 app.use("/recipes", recipesRouter);
 // app.use("/search");
-// app.use("/ingredients");
+app.use("/ingredients", ingredientsRouter);
 // app.use("/ownRecipes");
 // app.use("/popular-reciptes");
 // app.use("/schopping-list");

@@ -10,7 +10,7 @@ const router: Router = express.Router();
  *     summary: Get list of categories
  *     description: Retrieve a list of available categories.
  *     tags:
- *       - Category
+ *       - Recipes
  *     responses:
  *       200:
  *         description: Success
@@ -48,6 +48,8 @@ router.get('/category-list', categoryListController)
  * /recipes/main-page:
  *   get:
  *     summary: Retrieve a list of recipes by category for the main page
+ *     tags:
+ *       - Recipes
  *     responses:
  *       200:
  *         description: A list of recipes by category
@@ -87,9 +89,11 @@ router.get('/category-list', categoryListController)
 router.get('/main-page', mainPageRecipesController)
 /**
  * @swagger
- * /recipes/{category}:
+ * /recipes/category/{category}:
  *   get:
  *     summary: Retrieve a list of recipes by category
+ *     tags:
+ *       - Recipes
  *     parameters:
  *       - in: path
  *         name: category
@@ -120,13 +124,15 @@ router.get('/main-page', mainPageRecipesController)
  *                   type: string
  *                   example: Server error
  */
-router.get('/:category', getRecipesByCategoryController)
+router.get('/category/:category', getRecipesByCategoryController)
 
 /**
  * @swagger
  * /recipes/{id}:
  *   get:
  *     summary: Retrieve a recipe by ID
+ *     tags:
+ *       - Recipes
  *     parameters:
  *       - in: path
  *         name: id

@@ -1,7 +1,9 @@
 import recipesData from "../data/recipes.json";
 import categoriesListData from "../data/categoriesList.json";
+import ingredientsData from "../data/ingredients.json";
 import CategoryList from "../models/categoryList.model";
 import Recipe from "../models/recipes.model";
+import Ingredient from "../models/ingredients.model";
 
 const initializeRecipes = async () => {
   for (const recipe of recipesData) {
@@ -46,6 +48,21 @@ const initializeCategoryList = async () => {
   }
 };
 
+const initializeIngredients = async () => {
+  for (const ingredient of ingredientsData) {
+    const existingIngredients = await Ingredient.findById(ingredient._id.$oid);
+    if (!existingIngredients) {
+      const newIngredient = new Ingredient({
+        _id: ingredient._id.$oid,
+        title: ingredient.title,
+        description: ingredient.description,
+        type: ingredient.type,
+        thumbnail: ingredient.thumbnail,
+      });
+      await newIngredient.save();
+    }
+  }
+};
 export const initializeData = async () => {
-  await Promise.all([initializeCategoryList(), initializeRecipes()]);
+  await Promise.all([initializeCategoryList(), initializeRecipes(), initializeIngredients()]);
 };
