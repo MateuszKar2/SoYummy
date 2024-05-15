@@ -17,6 +17,10 @@ import Database from "./config/database";
 import authRouter from "./routes/auth.routes";
 import subscribeRouter from "./routes/subscribe.routes";
 import verifyRouter from "./routes/verify.routes";
+import recipesRouter from "./routes/recipes.routes";
+import ingredientsRouter from "./routes/ingredients.routes";
+import searchRouter from "./routes/search.routes";
+import { initializeData } from "./utils/dataInitialization";
 dotenv.config({ path: __dirname + "/.env" });
 
 let app: Express.Application | undefined = undefined;
@@ -42,9 +46,13 @@ export interface TypedResponse<ResBody> extends Express.Response {
   json: Send<ResBody, this>;
 }
 
-db.connect().catch((err: any) =>
-  console.error("Error connecting to database:", err)
-);
+db.connect()
+  .then(() => {
+    initializeData().catch((error) =>
+      console.error("Error initializing data:", error)
+    );
+  })
+  .catch((err: any) => console.error("Error connecting to database:", err));
 
 /**
  * Setup Express
@@ -88,9 +96,9 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use("/auth/users", authRouter);
 app.use("/auth/subscribe", subscribeRouter);
 app.use("/auth/verify", verifyRouter);
-// app.use("/recipes");
-// app.use("/search");
-// app.use("/ingredients");
+app.use("/recipes", recipesRouter);
+app.use("/search", searchRouter);
+app.use("/ingredients", ingredientsRouter);
 // app.use("/ownRecipes");
 // app.use("/popular-reciptes");
 // app.use("/schopping-list");
