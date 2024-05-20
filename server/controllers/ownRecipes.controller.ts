@@ -1,11 +1,14 @@
 import { Request, Response } from "express";
 import User from "../models/user.model";
-import Recipe from "../models/recipes.model";
+import Recipe, { RecipeDocument } from "../models/recipes.model";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 
-const saveOrDeleteOwnRecipe = async (
-  req: Request & { userId?: string},
-  res: Response,
-  operation: String
+dayjs.extend(relativeTime);
+
+export const createOwnRecipe = async (
+  req: Request & { userId?: string },
+  res: Response
 ) => {
   interface IRecipeBody {
     title: string;
@@ -66,7 +69,61 @@ const saveOrDeleteOwnRecipe = async (
   }
 };
 
-export const saveOwnRecipe = async (req: Request, res: Response) => {
-    
-  await saveOrDeleteOwnRecipe(req, res, "$addToSet");
+export const deleteOwnRecipe = async (
+  req: Request & { userId?: String },
+  res: Response
+) => {
+  try {
+    const { userId } = req;
+    if (!userId) {
+      res.status(400).json({ message: "User ID not provided" });
+      return;
+    }
+    const { id } = req.body;
+    const recipe = await Recipe.findByIdAndDelete(id);
+    if (!recipe) {
+      res.status(404).json({ message: "Recipe not found" });
+      return;
+    }
+    res.status(200).json({ message: "Recipe deleted successfully" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
+export const getOwnRecipes = async (
+  req: Request & { userId?: String },
+  res: Response
+) => {
+  try {
+    const { userId } = req;
+    const limit = String(req.query.limit || "10");
+    const skip = String(req.query.skip || "0");
+
+    if (!userId) {
+      res.status(400).json({ message: "User ID not provided" });
+      return;
+    }
+
+    const recipes = await Recipe.find({ createdBy: userId })
+      .sort({ createdAt: -1 })
+      .skip(parseInt(skip))
+      .limit(parseInt(limit))
+      .lean();
+
+    const formattedRecipes = recipes.map((recipe) => ({
+      ...recipe,
+      createdAt: dayjs(recipe.createdAt).fromNow(),
+    }));
+
+    const totalRecipes = await Recipe.countDocuments({ createdBy: userId });
+    res.status(200).json({
+      formattedRecipes,
+      totalRecipes,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Server error" });
+  }
 };
