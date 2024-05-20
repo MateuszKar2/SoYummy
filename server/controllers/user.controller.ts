@@ -199,10 +199,11 @@ const signin = async (
         }
       }
     }
-
+    
     const payload = {
       id: existingUser._id,
       email: existingUser.email,
+      role: existingUser.role,
     };
 
     const accessToken = jwt.sign(payload, process.env.SECRET!, {
