@@ -1,6 +1,6 @@
 import express, { Router } from "express";
 import decodeToken from "../middlewares/auth/decodeToken";
-import { saveOwnRecipe } from "../controllers/ownRecipes.controller";
+import { deleteOwnRecipe, createOwnRecipe, getOwnRecipes } from "../controllers/ownRecipes.controller";
 const router: Router = express.Router();
 /**
  * @swagger
@@ -67,6 +67,78 @@ const router: Router = express.Router();
  *       500:
  *         description: Server Error
  */
-router.post("/add", decodeToken, saveOwnRecipe);
-router.delete("/delete");
+router.post("/add", decodeToken, createOwnRecipe);
+/**
+ * @swagger
+ * /ownRecipes/delete:
+ *   delete:
+ *     summary: Delete a recipe
+ *     tags:
+ *       - OwnRecipes
+ *     parameters:
+ *       - in: header
+ *         name: Authorization
+ *         description: Bearer token for authentication.
+ *         required: true
+ *         type: string
+ *         example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+ *       - in: body
+ *         name: recipe
+ *         description: Recipe data
+ *         required: true
+ *         schema:
+ *           type: object
+ *           properties:
+ *             id:
+ *               type: string
+ *               example: "60d7265b6842e60015c31f10"
+ *     responses:
+ *       200:
+ *         description: Recipe deleted successfully
+ *       400:
+ *         description: Bad Request
+ *       401:
+ *         description: Unauthorized
+ *       500:
+ *         description: Server Error
+ */
+router.delete("/delete", decodeToken, deleteOwnRecipe);
+
+/**
+ * @swagger
+ * /ownRecipes/get:
+ *   get:
+ *     summary: Retrieve a list of own recipes
+ *     tags:
+ *       - OwnRecipes
+ *     parameters:
+ *       - in: header
+ *         name: Authorization
+ *         description: Bearer token for authentication.
+ *         required: true
+ *         type: string
+ *         example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+ *       - in: query
+ *         name: limit
+ *         description: Limit the number of recipes returned.
+ *         required: false
+ *         type: integer
+ *       - in: query
+ *         name: skip
+ *         description: Skip a number of recipes in the result.
+ *         required: false
+ *         type: integer
+ *     responses:
+ *       200:
+ *         description: List of own recipes
+ *         schema:
+ *           type: array
+ *           items:
+ *             $ref: '#/definitions/Recipe'
+ *       401:
+ *         description: Unauthorized
+ *       500:
+ *         description: Server Error
+ */
+router.get("/get", decodeToken, getOwnRecipes)
 export default router;
