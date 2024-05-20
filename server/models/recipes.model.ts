@@ -16,7 +16,8 @@ export interface RecipeDocument extends Document {
   favorites: string[];
   youtube: string;
   tags: string[];
-  timestamp: Date;
+  createdAt: Date;
+  updatedAt: Date;
   ingredients: Ingredient[];
   createdBy: string;
 }
@@ -33,11 +34,8 @@ const recipeSchema: Schema = new Schema({
   favorites: { type: [], ref: "User", default: [] },
   youtube: { type: String },
   tags: { type: [String], required: true },
-  timestamp: {
-    type: Date,
-    required: true,
-    default: Date.now,
-  },
+  createdAt: { type: Date, required: true, default: new Date() },
+  updateAt: { type: Date, required: true, default: new Date() },
   ingredients: { type: [{ id: String, measure: String }], required: true },
   createdBy: {
       type: mongoose.Schema.Types.ObjectId,
