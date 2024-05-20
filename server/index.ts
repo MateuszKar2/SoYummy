@@ -3,7 +3,7 @@
  *
  * Authors: Mateusz Potocki, Mateusz Karpiński
  */
-
+import recipesData from "../server/data/recipes.json";
 import * as dotenv from "dotenv";
 import Express from "express";
 import passport from "passport";
@@ -20,6 +20,8 @@ import verifyRouter from "./routes/verify.routes";
 import recipesRouter from "./routes/recipes.routes";
 import ingredientsRouter from "./routes/ingredients.routes";
 import searchRouter from "./routes/search.routes";
+import favoriteRouter from "./routes/favorite.routes";
+import ownRecipteRouter from "./routes/ownRecipes.routes"
 import { initializeData } from "./utils/dataInitialization";
 dotenv.config({ path: __dirname + "/.env" });
 
@@ -71,7 +73,7 @@ app.use(Express.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(morgan("dev"));
 import "./config/passport.ms";
-
+import { RecipeDocument } from "./models/recipes.model";
 /**
  * Routes
  */
@@ -83,9 +85,19 @@ const swaggerOptions = {
       version: "1.0.0",
       servers: ["http://localhost:3000"],
     },
+    components: {
+      securitySchemes: {
+        BearerAuth: {
+          type: "http",
+          scheme: "bearer",
+          bearerFormat: "JWT",
+        },
+      },
+    },
   },
   apis: ["./routes/*.ts"],
 };
+
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.get("/server-status", (req, res) => {
@@ -99,12 +111,13 @@ app.use("/auth/verify", verifyRouter);
 app.use("/recipes", recipesRouter);
 app.use("/search", searchRouter);
 app.use("/ingredients", ingredientsRouter);
-// app.use("/ownRecipes");
+app.use("/favorite", favoriteRouter);
+app.use("/ownRecipes", ownRecipteRouter);
 // app.use("/popular-reciptes");
 // app.use("/schopping-list");
-
 process.on("SIGINT", async () => {
   try {
+    
     await db.disconnect();
     console.log("Database disconnected");
     process.exit(0);

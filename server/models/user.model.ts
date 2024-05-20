@@ -5,7 +5,7 @@ export interface UserDocument extends Document {
   password: string;
   avatar?: string;
   role: "general" | "moderator" | "admin";
-  savedPosts: mongoose.Types.ObjectId[];
+  savedRecipes: mongoose.Types.ObjectId[];
   isEmailVerified: boolean;
 }
 
@@ -30,13 +30,6 @@ const userSchema: Schema = new Schema(
         enum: ["general", "admin"],
         default: "general",
       },
-      savedPosts: [
-        {
-          type: Schema.Types.ObjectId,
-          ref: "Post",
-          default: [],
-        },
-      ],
       isEmailVerified: {
         type: Boolean,
         default: false,

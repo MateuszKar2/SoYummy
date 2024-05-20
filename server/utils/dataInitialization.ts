@@ -7,10 +7,9 @@ import Ingredient from "../models/ingredients.model";
 
 const initializeRecipes = async () => {
   for (const recipe of recipesData) {
-    const existingRecipe = await Recipe.findById(recipe._id.$oid);
+    const existingRecipe = await Recipe.findOne({title: recipe.title});
     if (!existingRecipe) {
       const newRecipe = new Recipe({
-        _id: recipe._id.$oid,
         title: recipe.title,
         category: recipe.category,
         area: recipe.area,
@@ -50,15 +49,15 @@ const initializeCategoryList = async () => {
 
 const initializeIngredients = async () => {
   for (const ingredient of ingredientsData) {
-    const existingIngredients = await Ingredient.findById(ingredient._id.$oid);
+    const existingIngredients = await Ingredient.findOne({title: ingredient.title});
     if (!existingIngredients) {
       const newIngredient = new Ingredient({
-        _id: ingredient._id.$oid,
         title: ingredient.title,
         description: ingredient.description,
         type: ingredient.type,
         thumbnail: ingredient.thumbnail,
       });
+      
       await newIngredient.save();
     }
   }

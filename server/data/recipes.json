@@ -1,8 +1,5 @@
 [
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8897fc"
-    },
     "title": "Spaghetti Bolognese",
     "category": "Beef",
     "area": "Italian",
@@ -103,9 +100,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8897ee"
-    },
     "title": "Bakewell tart",
     "category": "Dessert",
     "area": "British",
@@ -195,9 +189,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8897f0"
-    },
     "title": "Teriyaki Chicken Casserole",
     "category": "Chicken",
     "area": "Japanese",
@@ -280,9 +271,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8897ef"
-    },
     "title": "Chicken Enchilada Casserole",
     "category": "Chicken",
     "area": "Mexican",
@@ -336,9 +324,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8897f2"
-    },
     "title": "Honey Teriyaki Salmon",
     "category": "Seafood",
     "area": "Japanese",
@@ -398,9 +383,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8897f5"
-    },
     "title": "Mediterranean Pasta Salad",
     "category": "Seafood",
     "area": "Italian",
@@ -483,9 +465,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8897f3"
-    },
     "title": "Vegan Lasagna",
     "category": "Vegan",
     "area": "Italian",
@@ -580,9 +559,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889800"
-    },
     "title": "Eton Mess",
     "category": "Dessert",
     "area": "British",
@@ -644,9 +620,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8897f1"
-    },
     "title": "Pad See Ew",
     "category": "Chicken",
     "area": "Thai",
@@ -746,9 +719,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8897f8"
-    },
     "title": "Irish stew",
     "category": "Beef",
     "area": "Irish",
@@ -855,9 +825,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8897f6"
-    },
     "title": "Cream Cheese Tart",
     "category": "Starter",
     "area": "Unknown",
@@ -958,9 +925,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8897f4"
-    },
     "title": "Chocolate Gateau",
     "category": "Dessert",
     "area": "French",
@@ -1027,9 +991,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889805"
-    },
     "title": "Spicy North African Potato Salad",
     "category": "Vegetarian",
     "area": "Moroccan",
@@ -1124,9 +1085,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889804"
-    },
     "title": "Chicken Handi",
     "category": "Chicken",
     "area": "Indian",
@@ -1248,9 +1206,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889803"
-    },
     "title": "Apple Frangipan Tart",
     "category": "Dessert",
     "area": "British",
@@ -1328,9 +1283,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8897f7"
-    },
     "title": "Potato Gratin with Chicken",
     "category": "Chicken",
     "area": "Unknown",
@@ -1416,9 +1368,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8897f9"
-    },
     "title": "Lamb tomato and sweet spices",
     "category": "Lamb",
     "area": "Moroccan",
@@ -1530,9 +1479,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8897fb"
-    },
     "title": "Spicy Arrabiata Penne",
     "category": "Vegetarian",
     "area": "Italian",
@@ -1609,9 +1555,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8897fa"
-    },
     "title": "Smoky Lentil Chili with Squash",
     "category": "Vegetarian",
     "area": "British",
@@ -1753,9 +1696,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889806"
-    },
     "title": "Fish pie",
     "category": "Seafood",
     "area": "British",
@@ -1870,9 +1810,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889807"
-    },
     "title": "Chicken Alfredo Primavera",
     "category": "Chicken",
     "area": "Italian",
@@ -2004,9 +1941,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889808"
-    },
     "title": "Beef Wellington",
     "category": "Beef",
     "area": "British",
@@ -2083,9 +2017,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889809"
-    },
     "title": "Poutine",
     "category": "Miscellaneous",
     "area": "Canadian",
@@ -2139,9 +2070,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88980a"
-    },
     "title": "Lamb Biryani",
     "category": "Lamb",
     "area": "Indian",
@@ -2284,9 +2212,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88980b"
-    },
     "title": "Tandoori chicken",
     "category": "Chicken",
     "area": "Indian",
@@ -2387,9 +2312,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8897fd"
-    },
     "title": "Rocky Road Fudge",
     "category": "Dessert",
     "area": "American",
@@ -2450,9 +2372,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88980c"
-    },
     "title": "Baingan Bharta",
     "category": "Vegetarian",
     "area": "Indian",
@@ -2524,9 +2443,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88980d"
-    },
     "title": "Lamb Rogan josh",
     "category": "Lamb",
     "area": "Indian",
@@ -2628,9 +2544,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88980e"
-    },
     "title": "Recheado Masala Fish",
     "category": "Seafood",
     "area": "Indian",
@@ -2731,9 +2644,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88980f"
-    },
     "title": "Dal fry",
     "category": "Vegetarian",
     "area": "Indian",
@@ -2847,9 +2757,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889810"
-    },
     "title": "Ribollita",
     "category": "Vegetarian",
     "area": "Italian",
@@ -2949,9 +2856,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889811"
-    },
     "title": "Beef Brisket Pot Roast",
     "category": "Beef",
     "area": "American",
@@ -3045,9 +2949,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889813"
-    },
     "title": "Thai Green Curry",
     "category": "Chicken",
     "area": "Thai",
@@ -3148,9 +3049,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889812"
-    },
     "title": "Kentucky Fried Chicken",
     "category": "Chicken",
     "area": "American",
@@ -3281,9 +3179,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889815"
-    },
     "title": "Roasted Eggplant With Tahini, Pine Nuts, and Lentils",
     "category": "Vegetarian",
     "area": "American",
@@ -3403,9 +3298,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889816"
-    },
     "title": "Stovetop Eggplant With Harissa, Chickpeas, and Cumin Yogurt",
     "category": "Vegetarian",
     "area": "American",
@@ -3475,9 +3367,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889818"
-    },
     "title": "Cajun spiced fish tacos",
     "category": "Seafood",
     "area": "Mexican",
@@ -3572,9 +3461,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889817"
-    },
     "title": "Chicken Fajita Mac and Cheese",
     "category": "Chicken",
     "area": "American",
@@ -3676,9 +3562,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889819"
-    },
     "title": "Katsu Chicken curry",
     "category": "Chicken",
     "area": "Japanese",
@@ -3791,9 +3674,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88981a"
-    },
     "title": "Laksa King Prawn Noodles",
     "category": "Vegan",
     "area": "Malaysian",
@@ -3876,9 +3756,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88981b"
-    },
     "title": "Toad In The Hole",
     "category": "Pork",
     "area": "British",
@@ -3946,9 +3823,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88981d"
-    },
     "title": "Beef Sunday Roast",
     "category": "Beef",
     "area": "British",
@@ -4024,9 +3898,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88981e"
-    },
     "title": "Vegan Chocolate Cake",
     "category": "Vegan",
     "area": "American",
@@ -4098,9 +3969,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88981f"
-    },
     "title": "Massaman Beef curry",
     "category": "Beef",
     "area": "Thai",
@@ -4206,9 +4074,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889820"
-    },
     "title": "Sticky Toffee Pudding Ultimate",
     "category": "Dessert",
     "area": "British",
@@ -4317,9 +4182,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889802"
-    },
     "title": "Kapsalon",
     "category": "Lamb",
     "area": "Dutch",
@@ -4395,9 +4257,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889821"
-    },
     "title": "Rigatoni with fennel sausage sauce",
     "category": "Lamb",
     "area": "Moroccan",
@@ -4515,9 +4374,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889823"
-    },
     "title": "Chicken Karaage",
     "category": "Chicken",
     "area": "Japanese",
@@ -4591,9 +4447,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889824"
-    },
     "title": "Coq au vin",
     "category": "Chicken",
     "area": "French",
@@ -4727,9 +4580,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889825"
-    },
     "title": "Salted Caramel Cheescake",
     "category": "Dessert",
     "area": "American",
@@ -4821,9 +4671,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889801"
-    },
     "title": "Bread and Butter Pudding",
     "category": "Dessert",
     "area": "British",
@@ -4906,9 +4753,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889826"
-    },
     "title": "Beef stroganoff",
     "category": "Beef",
     "area": "Russian",
@@ -5000,9 +4844,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889827"
-    },
     "title": "Fettucine alfredo",
     "category": "Pasta",
     "area": "Italian",
@@ -5070,9 +4911,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889828"
-    },
     "title": "Venetian Duck Ragu",
     "category": "Pasta",
     "area": "Italian",
@@ -5188,9 +5026,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88982c"
-    },
     "title": "Clam chowder",
     "category": "Starter",
     "area": "American",
@@ -5282,9 +5117,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88982e"
-    },
     "title": "Broccoli & Stilton soup",
     "category": "Starter",
     "area": "British",
@@ -5364,9 +5196,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88982f"
-    },
     "title": "Lamb Tagine",
     "category": "Lamb",
     "area": "Moroccan",
@@ -5482,9 +5311,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889822"
-    },
     "title": "Crock Pot Chicken Baked Tacos",
     "category": "Chicken",
     "area": "Mexican",
@@ -5594,9 +5420,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88981c"
-    },
     "title": "Salmon Prawn Risotto",
     "category": "Seafood",
     "area": "Italian",
@@ -5690,9 +5513,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889830"
-    },
     "title": "Lasagne",
     "category": "Pasta",
     "area": "Italian",
@@ -5808,9 +5628,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889831"
-    },
     "title": "Turkey Meatloaf",
     "category": "Miscellaneous",
     "area": "British",
@@ -5904,9 +5721,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889832"
-    },
     "title": "Chicken & mushroom Hotpot",
     "category": "Chicken",
     "area": "British",
@@ -5992,9 +5806,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889833"
-    },
     "title": "Pork Cassoulet",
     "category": "Pork",
     "area": "French",
@@ -6116,9 +5927,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889834"
-    },
     "title": "Grilled Mac and Cheese Sandwich",
     "category": "Pasta",
     "area": "American",
@@ -6228,9 +6036,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889836"
-    },
     "title": "Chicken Couscous",
     "category": "Chicken",
     "area": "Moroccan",
@@ -6316,9 +6121,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889835"
-    },
     "title": "Bean & Sausage Hotpot",
     "category": "Miscellaneous",
     "area": "British",
@@ -6374,9 +6176,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889837"
-    },
     "title": "Nutty Chicken Curry",
     "category": "Chicken",
     "area": "Indian",
@@ -6456,9 +6255,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889838"
-    },
     "title": "Braised Beef Chilli",
     "category": "Beef",
     "area": "Mexican",
@@ -6580,9 +6376,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889839"
-    },
     "title": "Chocolate Avocado Mousse",
     "category": "Dessert",
     "area": "British",
@@ -6656,9 +6449,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8897fe"
-    },
     "title": "Hot Chocolate Fudge",
     "category": "Dessert",
     "area": "American",
@@ -6723,9 +6513,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88983b"
-    },
     "title": "Banana Pancakes",
     "category": "Dessert",
     "area": "American",
@@ -6797,9 +6584,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88983c"
-    },
     "title": "Choc Chip Pecan Pie",
     "category": "Dessert",
     "area": "American",
@@ -6896,9 +6680,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88983d"
-    },
     "title": "New York cheesecake",
     "category": "Dessert",
     "area": "American",
@@ -6978,9 +6759,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88983e"
-    },
     "title": "Key Lime Pie",
     "category": "Dessert",
     "area": "American",
@@ -7054,9 +6832,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88983f"
-    },
     "title": "Pumpkin Pie",
     "category": "Dessert",
     "area": "American",
@@ -7152,9 +6927,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889840"
-    },
     "title": "Vegetarian Casserole",
     "category": "Vegetarian",
     "area": "British",
@@ -7267,9 +7039,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889841"
-    },
     "title": "Peach & Blueberry Grunt",
     "category": "Dessert",
     "area": "American",
@@ -7359,9 +7128,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889845"
-    },
     "title": "Matar Paneer",
     "category": "Vegetarian",
     "area": "Indian",
@@ -7456,9 +7222,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889844"
-    },
     "title": "Mushroom & Chestnut Rotolo",
     "category": "Vegetarian",
     "area": "British",
@@ -7559,9 +7322,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889846"
-    },
     "title": "Squash linguine",
     "category": "Vegetarian",
     "area": "Italian",
@@ -7620,9 +7380,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889847"
-    },
     "title": "Vegetarian Chilli",
     "category": "Vegetarian",
     "area": "British",
@@ -7674,9 +7431,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889848"
-    },
     "title": "Kidney Bean Curry",
     "category": "Vegetarian",
     "area": "Indian",
@@ -7770,9 +7524,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889843"
-    },
     "title": "Peanut Butter Cheesecake",
     "category": "Dessert",
     "area": "American",
@@ -7864,9 +7615,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889849"
-    },
     "title": "Beef Dumpling Stew",
     "category": "Beef",
     "area": "British",
@@ -8003,9 +7751,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889842"
-    },
     "title": "Vietnamese Grilled Pork (bun-thit-nuong)",
     "category": "Pork",
     "area": "Vietnamese",
@@ -8109,9 +7854,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88984a"
-    },
     "title": "Tahini Lentils",
     "category": "Vegetarian",
     "area": "Moroccan",
@@ -8199,9 +7941,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88984b"
-    },
     "title": "Chickpea Fajitas",
     "category": "Vegetarian",
     "area": "Mexican",
@@ -8301,9 +8040,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88984c"
-    },
     "title": "Spanish Tortilla",
     "category": "Vegetarian",
     "area": "Spanish",
@@ -8386,9 +8122,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88984d"
-    },
     "title": "Yaki Udon",
     "category": "Vegetarian",
     "area": "Japanese",
@@ -8476,9 +8209,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88984e"
-    },
     "title": "Beef and Mustard Pie",
     "category": "Beef",
     "area": "British",
@@ -8597,9 +8327,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889814"
-    },
     "title": "French Lentils With Garlic and Thyme",
     "category": "Miscellaneous",
     "area": "French",
@@ -8675,9 +8402,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889829"
-    },
     "title": "Osso Buco alla Milanese",
     "category": "Miscellaneous",
     "area": "Italian",
@@ -8799,9 +8523,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88984f"
-    },
     "title": "Minced Beef Pie",
     "category": "Beef",
     "area": "British",
@@ -8890,9 +8611,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889850"
-    },
     "title": "Chicken Ham and Leek Pie",
     "category": "Chicken",
     "area": "British",
@@ -9005,9 +8723,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889851"
-    },
     "title": "Lamb and Potato pie",
     "category": "Lamb",
     "area": "British",
@@ -9089,9 +8804,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889852"
-    },
     "title": "Beef and Oyster pie",
     "category": "Beef",
     "area": "British",
@@ -9209,9 +8921,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889853"
-    },
     "title": "Chicken Parmentier",
     "category": "Chicken",
     "area": "French",
@@ -9330,9 +9039,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889855"
-    },
     "title": "Steak and Kidney Pie",
     "category": "Beef",
     "area": "British",
@@ -9432,9 +9138,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889854"
-    },
     "title": "McSinghs Scotch pie",
     "category": "Lamb",
     "area": "British",
@@ -9552,9 +9255,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889856"
-    },
     "title": "Three Fish Pie",
     "category": "Seafood",
     "area": "British",
@@ -9657,9 +9357,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889857"
-    },
     "title": "Sticky Toffee Pudding",
     "category": "Dessert",
     "area": "British",
@@ -9749,9 +9446,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889858"
-    },
     "title": "Lancashire hotpot",
     "category": "Lamb",
     "area": "British",
@@ -9837,9 +9531,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889859"
-    },
     "title": "Bubble & Squeak",
     "category": "Pork",
     "area": "British",
@@ -9904,9 +9595,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88982a"
-    },
     "title": "Pilchard puttanesca",
     "category": "Pasta",
     "area": "Italian",
@@ -9986,9 +9674,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88985a"
-    },
     "title": "Spotted Dick",
     "category": "Dessert",
     "area": "British",
@@ -10072,9 +9757,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88985b"
-    },
     "title": "Kedgeree",
     "category": "Seafood",
     "area": "British",
@@ -10160,9 +9842,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88982b"
-    },
     "title": "Chilli prawn linguine",
     "category": "Pasta",
     "area": "Italian",
@@ -10266,9 +9945,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8897ff"
-    },
     "title": "Christmas Pudding Flapjack",
     "category": "Dessert",
     "area": "British",
@@ -10333,9 +10009,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88985e"
-    },
     "title": "Jam Roly-Poly",
     "category": "Dessert",
     "area": "British",
@@ -10403,9 +10076,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88985f"
-    },
     "title": "Blackberry Fool",
     "category": "Dessert",
     "area": "British",
@@ -10502,9 +10172,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889860"
-    },
     "title": "Treacle Tart",
     "category": "Dessert",
     "area": "British",
@@ -10568,9 +10235,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889861"
-    },
     "title": "Tuna Nicoise",
     "category": "Seafood",
     "area": "French",
@@ -10650,9 +10314,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889862"
-    },
     "title": "Battenberg Cake",
     "category": "Dessert",
     "area": "British",
@@ -10753,9 +10414,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889863"
-    },
     "title": "English Breakfast",
     "category": "Breakfast",
     "area": "British",
@@ -10825,9 +10483,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889864"
-    },
     "title": "Full English Breakfast",
     "category": "Breakfast",
     "area": "British",
@@ -10908,9 +10563,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889865"
-    },
     "title": "Rock Cakes",
     "category": "Dessert",
     "area": "British",
@@ -10987,9 +10639,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889866"
-    },
     "title": "Dundee cake",
     "category": "Dessert",
     "area": "British",
@@ -11097,9 +10746,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889867"
-    },
     "title": "Madeira Cake",
     "category": "Dessert",
     "area": "British",
@@ -11172,9 +10818,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889868"
-    },
     "title": "Carrot Cake",
     "category": "Dessert",
     "area": "British",
@@ -11276,9 +10919,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889869"
-    },
     "title": "Chelsea Buns",
     "category": "Dessert",
     "area": "British",
@@ -11374,9 +11014,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88986a"
-    },
     "title": "French Onion Soup",
     "category": "Side",
     "area": "French",
@@ -11464,9 +11101,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88986b"
-    },
     "title": "Parkin Cake",
     "category": "Dessert",
     "area": "British",
@@ -11548,9 +11182,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88985c"
-    },
     "title": "Eccles Cakes",
     "category": "Dessert",
     "area": "British",
@@ -11645,9 +11276,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88986d"
-    },
     "title": "Chocolate Souffle",
     "category": "Dessert",
     "area": "French",
@@ -11726,9 +11354,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889870"
-    },
     "title": "Flamiche",
     "category": "Vegetarian",
     "area": "French",
@@ -11822,9 +11447,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889871"
-    },
     "title": "Chocolate Raspberry Brownies",
     "category": "Dessert",
     "area": "American",
@@ -11902,9 +11524,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889872"
-    },
     "title": "Chinon Apple Tarts",
     "category": "Dessert",
     "area": "French",
@@ -11975,9 +11594,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889873"
-    },
     "title": "Summer Pistou",
     "category": "Vegetarian",
     "area": "French",
@@ -12063,9 +11679,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889874"
-    },
     "title": "Three-cheese souffles",
     "category": "Miscellaneous",
     "area": "French",
@@ -12165,9 +11778,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88986e"
-    },
     "title": "Tarte Tatin",
     "category": "Dessert",
     "area": "French",
@@ -12234,9 +11844,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889876"
-    },
     "title": "Boulangère Potatoes",
     "category": "Side",
     "area": "French",
@@ -12294,9 +11901,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889877"
-    },
     "title": "French Omelette",
     "category": "Miscellaneous",
     "area": "French",
@@ -12360,9 +11964,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889878"
-    },
     "title": "Pear Tarte Tatin",
     "category": "Dessert",
     "area": "French",
@@ -12440,9 +12041,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88987a"
-    },
     "title": "White chocolate creme brulee",
     "category": "Dessert",
     "area": "French",
@@ -12502,9 +12100,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889879"
-    },
     "title": "Fennel Dauphinoise",
     "category": "Side",
     "area": "French",
@@ -12575,9 +12170,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88987b"
-    },
     "title": "Chicken Marengo",
     "category": "Chicken",
     "area": "French",
@@ -12645,9 +12237,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88987c"
-    },
     "title": "Tourtiere",
     "category": "Pork",
     "area": "Canadian",
@@ -12744,9 +12333,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88987d"
-    },
     "title": "Prawn & Fennel Bisque",
     "category": "Side",
     "area": "French",
@@ -12849,9 +12435,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88986c"
-    },
     "title": "Beef Bourguignon",
     "category": "Beef",
     "area": "French",
@@ -12967,9 +12550,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88982d"
-    },
     "title": "Creamy Tomato Soup",
     "category": "Starter",
     "area": "British",
@@ -13075,9 +12655,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88987e"
-    },
     "title": "Fish Stew with Rouille",
     "category": "Seafood",
     "area": "French",
@@ -13215,9 +12792,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88987f"
-    },
     "title": "Nanaimo Bars",
     "category": "Dessert",
     "area": "Canadian",
@@ -13319,9 +12893,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889880"
-    },
     "title": "Split Pea Soup",
     "category": "Side",
     "area": "Canadian",
@@ -13398,9 +12969,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889881"
-    },
     "title": "Provençal Omelette Cake",
     "category": "Vegetarian",
     "area": "French",
@@ -13506,9 +13074,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889882"
-    },
     "title": "Canadian Butter Tarts",
     "category": "Dessert",
     "area": "Canadian",
@@ -13587,9 +13152,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889884"
-    },
     "title": "Timbits",
     "category": "Dessert",
     "area": "Canadian",
@@ -13666,9 +13228,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889883"
-    },
     "title": "Montreal Smoked Meat",
     "category": "Beef",
     "area": "Canadian",
@@ -13782,9 +13341,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889885"
-    },
     "title": "Spinach & Ricotta Cannelloni",
     "category": "Vegetarian",
     "area": "Italian",
@@ -13894,9 +13450,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889886"
-    },
     "title": "Pouding chomeur",
     "category": "Dessert",
     "area": "Canadian",
@@ -13984,9 +13537,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889888"
-    },
     "title": "Pate Chinois",
     "category": "Beef",
     "area": "Canadian",
@@ -14075,9 +13625,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88983a"
-    },
     "title": "Pancakes",
     "category": "Dessert",
     "area": "American",
@@ -14150,9 +13697,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889889"
-    },
     "title": "Rappie Pie",
     "category": "Chicken",
     "area": "Canadian",
@@ -14222,9 +13766,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889875"
-    },
     "title": "Brie wrapped in prosciutto & brioche",
     "category": "Side",
     "area": "French",
@@ -14302,9 +13843,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88988a"
-    },
     "title": "Chicken Basquaise",
     "category": "Chicken",
     "area": "French",
@@ -14446,9 +13984,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88988b"
-    },
     "title": "Steak Diane",
     "category": "Beef",
     "area": "French",
@@ -14576,9 +14111,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88988c"
-    },
     "title": "Saltfish and Ackee",
     "category": "Seafood",
     "area": "Jamaican",
@@ -14696,9 +14228,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88988d"
-    },
     "title": "Jerk chicken with rice & peas",
     "category": "Chicken",
     "area": "Jamaican",
@@ -14817,9 +14346,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88988e"
-    },
     "title": "Jamaican Beef Patties",
     "category": "Beef",
     "area": "Jamaican",
@@ -14938,9 +14464,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88988f"
-    },
     "title": "Apple & Blackberry Crumble",
     "category": "Dessert",
     "area": "British",
@@ -15010,9 +14533,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889891"
-    },
     "title": "Oxtail with broad beans",
     "category": "Beef",
     "area": "Jamaican",
@@ -15114,9 +14634,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889890"
-    },
     "title": "Callaloo Jamaican Style",
     "category": "Miscellaneous",
     "area": "Jamaican",
@@ -15204,9 +14721,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889894"
-    },
     "title": "Escovitch Fish",
     "category": "Seafood",
     "area": "Jamaican",
@@ -15339,9 +14853,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889895"
-    },
     "title": "Kung Pao Chicken",
     "category": "Chicken",
     "area": "Chinese",
@@ -15445,9 +14956,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889892"
-    },
     "title": "Red Peas Soup",
     "category": "Beef",
     "area": "Jamaican",
@@ -15560,9 +15068,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889893"
-    },
     "title": "Roast fennel and aubergine paella",
     "category": "Vegan",
     "area": "Spanish",
@@ -15681,9 +15186,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889896"
-    },
     "title": "Kung Po Prawns",
     "category": "Seafood",
     "area": "Chinese",
@@ -15783,9 +15285,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889897"
-    },
     "title": "Wontons",
     "category": "Pork",
     "area": "Chinese",
@@ -15879,9 +15378,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889898"
-    },
     "title": "Ma Po Tofu",
     "category": "Beef",
     "area": "Chinese",
@@ -16003,9 +15499,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889899"
-    },
     "title": "Sweet and Sour Pork",
     "category": "Pork",
     "area": "Chinese",
@@ -16093,9 +15586,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88989b"
-    },
     "title": "General Tso's Chicken",
     "category": "Chicken",
     "area": "Chinese",
@@ -16235,9 +15725,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88989c"
-    },
     "title": "Beef Lo Mein",
     "category": "Beef",
     "area": "Chinese",
@@ -16365,9 +15852,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88986f"
-    },
     "title": "Ratatouille",
     "category": "Vegetarian",
     "area": "French",
@@ -16456,9 +15940,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88989e"
-    },
     "title": "Shrimp Chow Fun",
     "category": "Seafood",
     "area": "Chinese",
@@ -16586,9 +16067,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88989a"
-    },
     "title": "Szechuan Beef",
     "category": "Beef",
     "area": "Chinese",
@@ -16734,9 +16212,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88989d"
-    },
     "title": "Baked salmon with fennel & tomatoes",
     "category": "Seafood",
     "area": "British",
@@ -16810,9 +16285,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898a0"
-    },
     "title": "Peanut Butter Cookies",
     "category": "Dessert",
     "area": "American",
@@ -16860,9 +16332,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898a1"
-    },
     "title": "Chicken Congee",
     "category": "Chicken",
     "area": "Chinese",
@@ -16942,9 +16411,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898a2"
-    },
     "title": "Hot and Sour Soup",
     "category": "Pork",
     "area": "Chinese",
@@ -17062,9 +16528,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88989f"
-    },
     "title": "Egg Drop Soup",
     "category": "Vegetarian",
     "area": "Chinese",
@@ -17154,9 +16617,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898a3"
-    },
     "title": "Duck Confit",
     "category": "Miscellaneous",
     "area": "French",
@@ -17218,9 +16678,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898a9"
-    },
     "title": "Breakfast Potatoes",
     "category": "Breakfast",
     "area": "Canadian",
@@ -17304,9 +16761,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898ae"
-    },
     "title": "Chakchouka ",
     "category": "Miscellaneous",
     "area": "Tunisian",
@@ -17398,9 +16852,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898a4"
-    },
     "title": "Budino Di Ricotta",
     "category": "Dessert",
     "area": "Italian",
@@ -17481,9 +16932,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898b2"
-    },
     "title": "Tunisian Orange Cake",
     "category": "Dessert",
     "area": "Tunisian",
@@ -17551,9 +16999,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898b5"
-    },
     "title": "Corba",
     "category": "Side",
     "area": "Turkish",
@@ -17659,9 +17104,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898a7"
-    },
     "title": "Chocolate Caramel Crispy",
     "category": "Dessert",
     "area": "British",
@@ -17718,9 +17160,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898a5"
-    },
     "title": "Salmon Avocado Salad",
     "category": "Seafood",
     "area": "British",
@@ -17802,9 +17241,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898a8"
-    },
     "title": "Smoked Haddock Kedgeree",
     "category": "Breakfast",
     "area": "Indian",
@@ -17906,9 +17342,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898b0"
-    },
     "title": "Leblebi Soup",
     "category": "Vegetarian",
     "area": "Tunisian",
@@ -17996,9 +17429,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898ac"
-    },
     "title": "Keleya Zaara",
     "category": "Lamb",
     "area": "Tunisian",
@@ -18072,9 +17502,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898b4"
-    },
     "title": "BeaverTails",
     "category": "Dessert",
     "area": "Canadian",
@@ -18170,9 +17597,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898af"
-    },
     "title": "Tuna and Egg Briks",
     "category": "Seafood",
     "area": "Tunisian",
@@ -18264,9 +17688,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898b6"
-    },
     "title": "Kumpir",
     "category": "Side",
     "area": "Turkish",
@@ -18330,9 +17751,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898b3"
-    },
     "title": "Tunisian Lamb Soup",
     "category": "Lamb",
     "area": "Tunisian",
@@ -18438,9 +17856,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898ad"
-    },
     "title": "Kafteji",
     "category": "Vegetarian",
     "area": "Tunisian",
@@ -18520,9 +17935,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898aa"
-    },
     "title": "Mbuzi Choma (Roasted Goat)",
     "category": "Goat",
     "area": "Kenyan",
@@ -18593,9 +18005,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898a6"
-    },
     "title": "Salmon Eggs Eggs Benedict",
     "category": "Breakfast",
     "area": "American",
@@ -18672,9 +18081,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898ab"
-    },
     "title": "Seafood fideuà",
     "category": "Seafood",
     "area": "Spanish",
@@ -18778,9 +18184,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898b1"
-    },
     "title": "Home-made Mandazi",
     "category": "Breakfast",
     "area": "Kenyan",
@@ -18836,9 +18239,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898b7"
-    },
     "title": "Bitterballen (Dutch meatballs)",
     "category": "Beef",
     "area": "Dutch",
@@ -18934,9 +18334,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e88985d"
-    },
     "title": "Summer Pudding",
     "category": "Dessert",
     "area": "British",
@@ -19000,9 +18397,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898b9"
-    },
     "title": "Snert (Dutch Split Pea Soup)",
     "category": "Side",
     "area": "Dutch",
@@ -19097,9 +18491,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898ba"
-    },
     "title": "Spaghetti alla Carbonara",
     "category": "Pasta",
     "area": "Italian",
@@ -19165,9 +18556,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898bb"
-    },
     "title": "Lasagna Sandwiches",
     "category": "Pasta",
     "area": "American",
@@ -19249,9 +18637,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898bc"
-    },
     "title": "Christmas Pudding Trifle",
     "category": "Dessert",
     "area": "British",
@@ -19333,9 +18718,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898be"
-    },
     "title": "Christmas cake",
     "category": "Dessert",
     "area": "British",
@@ -19459,9 +18841,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898bd"
-    },
     "title": "Classic Christmas pudding",
     "category": "Dessert",
     "area": "British",
@@ -19555,9 +18934,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898bf"
-    },
     "title": "Soy-Glazed Meatloaves with Wasabi Mashed Potatoes & Roasted Carrots",
     "category": "Beef",
     "area": "American",
@@ -19649,9 +19025,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898c0"
-    },
     "title": "Mince Pies",
     "category": "Dessert",
     "area": "British",
@@ -19715,9 +19088,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898c3"
-    },
     "title": "French Onion Chicken with Roasted Carrots & Mashed Potatoes",
     "category": "Chicken",
     "area": "American",
@@ -19815,9 +19185,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898c8"
-    },
     "title": "Vegetable Shepherd's Pie",
     "category": "Beef",
     "area": "Irish",
@@ -19959,9 +19326,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898c4"
-    },
     "title": "BBQ Pork Sloppy Joes",
     "category": "Pork",
     "area": "American",
@@ -20065,9 +19429,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898c5"
-    },
     "title": "Crispy Sausages and Greens",
     "category": "Pork",
     "area": "Irish",
@@ -20147,9 +19508,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898c6"
-    },
     "title": "Corned Beef and Cabbage",
     "category": "Beef",
     "area": "Irish",
@@ -20201,9 +19559,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898c1"
-    },
     "title": "Honey Balsamic Chicken with Crispy Broccoli & Potatoes",
     "category": "Chicken",
     "area": "American",
@@ -20289,9 +19644,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898c2"
-    },
     "title": "Skillet Apple Pork Chops with Roasted Sweet Potatoes & Zucchini",
     "category": "Pork",
     "area": "American",
@@ -20377,9 +19729,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898c7"
-    },
     "title": "Beef Banh Mi Bowls with Sriracha Mayo, Carrot & Pickled Cucumber",
     "category": "Beef",
     "area": "Vietnamese",
@@ -20453,9 +19802,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898c9"
-    },
     "title": "Moussaka",
     "category": "Beef",
     "area": "Greek",
@@ -20529,9 +19875,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898ca"
-    },
     "title": "Strawberry Rhubarb Pie",
     "category": "Dessert",
     "area": "British",
@@ -20635,9 +19978,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898cb"
-    },
     "title": "Brown Stew Chicken",
     "category": "Chicken",
     "area": "Jamaican",
@@ -20743,9 +20083,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898cc"
-    },
     "title": "Big Mac",
     "category": "Beef",
     "area": "American",
@@ -20855,9 +20192,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898cf"
-    },
     "title": "Bigos (Hunters Stew)",
     "category": "Pork",
     "area": "Polish",
@@ -21003,9 +20337,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898d0"
-    },
     "title": "Chicken Quinoa Greek Salad",
     "category": "Chicken",
     "area": "Greek",
@@ -21097,9 +20428,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898d1"
-    },
     "title": "Stuffed Lamb Tomatoes",
     "category": "Lamb",
     "area": "Greek",
@@ -21203,9 +20531,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898d2"
-    },
     "title": "Chick-Fil-A Sandwich",
     "category": "Chicken",
     "area": "American",
@@ -21315,9 +20640,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898d3"
-    },
     "title": "Krispy Kreme Donut",
     "category": "Dessert",
     "area": "American",
@@ -21415,9 +20737,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898d4"
-    },
     "title": "Paszteciki (Polish Pasties)",
     "category": "Beef",
     "area": "Polish",
@@ -21497,9 +20816,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898d6"
-    },
     "title": "Lamb Tzatziki Burgers",
     "category": "Lamb",
     "area": "Greek",
@@ -21591,9 +20907,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898d5"
-    },
     "title": "Honey Yogurt Cheesecake",
     "category": "Dessert",
     "area": "Greek",
@@ -21679,9 +20992,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898d7"
-    },
     "title": "Shakshuka",
     "category": "Vegetarian",
     "area": "Egyptian",
@@ -21765,9 +21075,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898d8"
-    },
     "title": "Ful Medames",
     "category": "Vegetarian",
     "area": "Egyptian",
@@ -21829,9 +21136,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898da"
-    },
     "title": "Rogaliki (Polish Croissant Cookies)",
     "category": "Dessert",
     "area": "Polish",
@@ -21893,9 +21197,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898db"
-    },
     "title": "Mulukhiyah",
     "category": "Beef",
     "area": "Egyptian",
@@ -21963,9 +21264,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898d9"
-    },
     "title": "Shawarma",
     "category": "Chicken",
     "area": "Egyptian",
@@ -22069,9 +21367,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898dd"
-    },
     "title": "Polskie Naleśniki (Polish Pancakes)",
     "category": "Dessert",
     "area": "Polish",
@@ -22139,9 +21434,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898dc"
-    },
     "title": "Gołąbki (cabbage roll)",
     "category": "Beef",
     "area": "Polish",
@@ -22227,9 +21519,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898e1"
-    },
     "title": "Pierogi (Polish Dumplings)",
     "category": "Side",
     "area": "Polish",
@@ -22309,9 +21598,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898e2"
-    },
     "title": "Rosół (Polish Chicken Soup)",
     "category": "Chicken",
     "area": "Polish",
@@ -22415,9 +21701,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898e5"
-    },
     "title": "Japanese gohan rice",
     "category": "Side",
     "area": "Japanese",
@@ -22467,9 +21750,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898e6"
-    },
     "title": "Japanese Katsudon",
     "category": "Pork",
     "area": "Japanese",
@@ -22555,9 +21835,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898e8"
-    },
     "title": "Mustard champ",
     "category": "Side",
     "area": "Irish",
@@ -22613,9 +21890,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898e7"
-    },
     "title": "Ham hock colcannon",
     "category": "Pork",
     "area": "Irish",
@@ -22695,9 +21969,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898ea"
-    },
     "title": "Boxty Breakfast",
     "category": "Pork",
     "area": "Irish",
@@ -22789,9 +22060,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898e9"
-    },
     "title": "Coddled pork with cider",
     "category": "Pork",
     "area": "Irish",
@@ -22877,9 +22145,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898eb"
-    },
     "title": "Spring onion and prawn empanadas",
     "category": "Seafood",
     "area": "Portuguese",
@@ -22965,9 +22230,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898ec"
-    },
     "title": "Piri-piri chicken and slaw",
     "category": "Chicken",
     "area": "Portuguese",
@@ -23089,9 +22351,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898ee"
-    },
     "title": "Portuguese prego with green piri-piri",
     "category": "Beef",
     "area": "Portuguese",
@@ -23183,9 +22442,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898ef"
-    },
     "title": "Fish fofos",
     "category": "Seafood",
     "area": "Portuguese",
@@ -23283,9 +22539,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898f0"
-    },
     "title": "Portuguese barbecued pork (Febras assadas)",
     "category": "Pork",
     "area": "Portuguese",
@@ -23365,9 +22618,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898f1"
-    },
     "title": "Portuguese fish stew (Caldeirada de peixe)",
     "category": "Seafood",
     "area": "Portuguese",
@@ -23489,9 +22739,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898ed"
-    },
     "title": "Grilled Portuguese sardines",
     "category": "Seafood",
     "area": "Portuguese",
@@ -23559,9 +22806,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898f4"
-    },
     "title": "Mee goreng mamak",
     "category": "Seafood",
     "area": "Malaysian",
@@ -23677,9 +22921,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898f3"
-    },
     "title": "Moroccan Carrot Soup",
     "category": "Vegetarian",
     "area": "Moroccan",
@@ -23753,9 +22994,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898f2"
-    },
     "title": "Portuguese custard tarts",
     "category": "Dessert",
     "area": "Portuguese",
@@ -23847,9 +23085,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898f5"
-    },
     "title": "Apam balik",
     "category": "Dessert",
     "area": "Malaysian",
@@ -23929,9 +23164,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898f6"
-    },
     "title": "Ayam Percik",
     "category": "Chicken",
     "area": "Malaysian",
@@ -24035,9 +23267,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898f8"
-    },
     "title": "Roti john",
     "category": "Beef",
     "area": "Malaysian",
@@ -24111,9 +23340,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898f9"
-    },
     "title": "Seri muka kuih",
     "category": "Dessert",
     "area": "Malaysian",
@@ -24193,9 +23419,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898fa"
-    },
     "title": "Beef Rendang",
     "category": "Beef",
     "area": "Malaysian",
@@ -24293,9 +23516,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898fb"
-    },
     "title": "Cevapi Sausages",
     "category": "Beef",
     "area": "Croatian",
@@ -24395,9 +23615,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898fc"
-    },
     "title": "Croatian lamb peka",
     "category": "Beef",
     "area": "Croatian",
@@ -24501,9 +23718,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898fd"
-    },
     "title": "Croatian Bean Stew",
     "category": "Beef",
     "area": "Croatian",
@@ -24575,9 +23789,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898fe"
-    },
     "title": "Traditional Croatian Goulash",
     "category": "Beef",
     "area": "Croatian",
@@ -24677,9 +23888,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898ff"
-    },
     "title": "Mushroom soup with buckwheat",
     "category": "Side",
     "area": "Croatian",
@@ -24768,9 +23976,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889901"
-    },
     "title": "Burek",
     "category": "Side",
     "area": "Croatian",
@@ -24835,9 +24040,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889900"
-    },
     "title": "Fresh sardines",
     "category": "Side",
     "area": "Croatian",
@@ -24889,9 +24091,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889905"
-    },
     "title": "Lamb and Lemon Souvlaki",
     "category": "Lamb",
     "area": "Greek",
@@ -24959,9 +24158,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889907"
-    },
     "title": "Feteer Meshaltet",
     "category": "Side",
     "area": "Egyptian",
@@ -25017,9 +24213,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889906"
-    },
     "title": "Tamiya",
     "category": "Vegetarian",
     "area": "Egyptian",
@@ -25099,9 +24292,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889908"
-    },
     "title": "Cashew Ghoriba Biscuits",
     "category": "Dessert",
     "area": "Tunisian",
@@ -25157,9 +24347,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889887"
-    },
     "title": "Sugar Pie",
     "category": "Dessert",
     "area": "Canadian",
@@ -25230,9 +24417,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898ce"
-    },
     "title": "Pizza Express Margherita",
     "category": "Miscellaneous",
     "area": "Italian",
@@ -25324,9 +24508,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898df"
-    },
     "title": "Fruit and Cream Cheese Breakfast Pastries",
     "category": "Breakfast",
     "area": "American",
@@ -25403,9 +24584,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898e3"
-    },
     "title": "Tonkatsu pork",
     "category": "Pork",
     "area": "Japanese",
@@ -25485,9 +24663,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898b8"
-    },
     "title": "Stamppot",
     "category": "Pork",
     "area": "Dutch",
@@ -25576,9 +24751,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898e0"
-    },
     "title": "Sledz w Oleju (Polish Herrings)",
     "category": "Seafood",
     "area": "Polish",
@@ -25640,9 +24812,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889902"
-    },
     "title": "Walnut Roll Gužvara",
     "category": "Dessert",
     "area": "Croatian",
@@ -25736,9 +24905,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898f7"
-    },
     "title": "Nasi lemak",
     "category": "Seafood",
     "area": "Malaysian",
@@ -25866,9 +25032,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889903"
-    },
     "title": "Chivito uruguayo",
     "category": "Beef",
     "area": "Unknown",
@@ -25954,9 +25117,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e889904"
-    },
     "title": "Fettuccine Alfredo",
     "category": "Pasta",
     "area": "Italian",
@@ -26018,9 +25178,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898de"
-    },
     "title": "Koshari",
     "category": "Vegetarian",
     "area": "Egyptian",
@@ -26094,9 +25251,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898e4"
-    },
     "title": "Egyptian Fatteh",
     "category": "Beef",
     "area": "Egyptian",
@@ -26212,9 +25366,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640cd5ac2d9fecf12e8898cd"
-    },
     "title": "Gigantes Plaki",
     "category": "Vegetarian",
     "area": "Greek",
@@ -26300,9 +25451,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "640f3c097eca20453198dfae"
-    },
     "title": "Spaghetti Bolognese",
     "category": "Beef",
     "area": "Italian",
@@ -26403,9 +25551,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "64144c7df5f602afeb513263"
-    },
     "title": "Garides Saganaki",
     "category": "Seafood",
     "area": "Greek",
