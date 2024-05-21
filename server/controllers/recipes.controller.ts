@@ -80,3 +80,19 @@ export const getRecipesByIdController = async (req: Request, res: Response) => {
     res.status(500).json({ status: "Error", message: "Server error" });
   }
 };
+
+export const getPopularRecipes = async (req: Request, res: Response) => {
+  try {
+    const recipes = await Recipe.find({ "favorites.0": { $exists: true } })
+      .sort({ "favorites.length": -1 })
+      .limit(5);
+    if (recipes.length === 0) {
+      res.status(404).json({ message: "No recipes with favorites found" });
+    } else {
+      res.status(200).json(recipes);
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Server error" });
+  }
+};

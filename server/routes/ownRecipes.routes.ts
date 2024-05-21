@@ -106,7 +106,7 @@ router.delete("/delete", decodeToken, deleteOwnRecipe);
 
 /**
  * @swagger
- * /ownRecipes/get:
+ * /ownRecipes:
  *   get:
  *     summary: Retrieve a list of own recipes
  *     tags:
