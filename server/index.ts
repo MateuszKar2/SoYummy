@@ -3,26 +3,17 @@
  *
  * Authors: Mateusz Potocki, Mateusz Karpiński
  */
-import recipesData from "../server/data/recipes.json";
 import * as dotenv from "dotenv";
 import Express from "express";
-import passport from "passport";
-import cors from "cors";
+import { initializeMiddleware } from "./config/middlewares.config";
 import http from "http";
-import { Send, Query } from "express-serve-static-core";
-import morgan from "morgan";
 import swaggerJsDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
 import Database from "./config/database";
-import authRouter from "./routes/auth.routes";
-import subscribeRouter from "./routes/subscribe.routes";
-import verifyRouter from "./routes/verify.routes";
-import recipesRouter from "./routes/recipes.routes";
-import ingredientsRouter from "./routes/ingredients.routes";
-import searchRouter from "./routes/search.routes";
-import favoriteRouter from "./routes/favorite.routes";
-import ownRecipteRouter from "./routes/ownRecipes.routes"
+import { swaggerOptions } from "./config/swagger.config";
+import initializeRouters from "./routes/index.routes"
 import { initializeData } from "./utils/dataInitialization";
+import "./config/passport.ms";
 dotenv.config({ path: __dirname + "/.env" });
 
 let app: Express.Application | undefined = undefined;
@@ -30,24 +21,6 @@ const PORT = process.env.PORT || 3001;
 const mySecret = process.env.MONGO_URI;
 
 const db = new Database(mySecret!, {});
-
-export interface TypedRequestBody<T> extends Express.Request {
-  body: T;
-}
-
-export interface TypedRequestQuery<T extends Query> extends Express.Request {
-  query: T;
-}
-
-export interface TypedRequest<T extends Query, U> extends Express.Request {
-  body: U;
-  query: T;
-}
-
-export interface TypedResponse<ResBody> extends Express.Response {
-  json: Send<ResBody, this>;
-}
-
 db.connect()
   .then(() => {
     initializeData().catch((error) =>
@@ -56,48 +29,8 @@ db.connect()
   })
   .catch((err: any) => console.error("Error connecting to database:", err));
 
-/**
- * Setup Express
- */
-
-const allowedOrigins = ["http://localhost:3000"];
-
-const options: cors.CorsOptions = {
-  origin: allowedOrigins,
-};
-
 app = Express();
-app.use(cors(options));
-app.use(Express.json());
-app.use(Express.urlencoded({ extended: true }));
-app.use(passport.initialize());
-app.use(morgan("dev"));
-import "./config/passport.ms";
-import { RecipeDocument } from "./models/recipes.model";
-/**
- * Routes
- */
-const swaggerOptions = {
-  swaggerDefinition: {
-    info: {
-      title: "SoYummy API",
-      description: "SoYummi API Information",
-      version: "1.0.0",
-      servers: ["http://localhost:3000"],
-    },
-    components: {
-      securitySchemes: {
-        BearerAuth: {
-          type: "http",
-          scheme: "bearer",
-          bearerFormat: "JWT",
-        },
-      },
-    },
-  },
-  apis: ["./routes/*.ts"],
-};
-
+initializeMiddleware(app);
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.get("/server-status", (req, res) => {
@@ -105,16 +38,7 @@ app.get("/server-status", (req, res) => {
 });
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
-app.use("/auth/users", authRouter);
-app.use("/auth/subscribe", subscribeRouter);
-app.use("/auth/verify", verifyRouter);
-app.use("/recipes", recipesRouter);
-app.use("/search", searchRouter);
-app.use("/ingredients", ingredientsRouter);
-app.use("/favorite", favoriteRouter);
-app.use("/ownRecipes", ownRecipteRouter);
-// app.use("/popular-reciptes");
-// app.use("/schopping-list");
+initializeRouters(app)
 process.on("SIGINT", async () => {
   try {
     
