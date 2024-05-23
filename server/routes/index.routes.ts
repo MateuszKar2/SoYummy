@@ -8,6 +8,7 @@ import searchRouter from "./search.routes";
 import favoriteRouter from "./favorite.routes";
 import ownRecipteRouter from "./ownRecipes.routes";
 import popularRecipes from "./popularRecipe.routes";
+import shoppingListRouter from "./shoppingList.routes";
 
 export default function (app: Express.Application) {
   app.use("/auth/users", authRouter);
@@ -19,5 +20,5 @@ export default function (app: Express.Application) {
   app.use("/favorite", favoriteRouter);
   app.use("/ownRecipes", ownRecipteRouter);
   app.use("/popular-recipe", popularRecipes);
-  // app.use("/schopping-list");
+  app.use("/shopping-list", shoppingListRouter);
 }

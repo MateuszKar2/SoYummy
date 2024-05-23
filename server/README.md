@@ -53,8 +53,7 @@ The `User` model is used for storing information about users. It has the followi
 - `email`: User's email address. This is a field of type `string`.
 - `passwords`: User's password. This is a field of type `string`.
 - `avatar`: User's avatar. This is a field of type `string`.
-- `roler`: User's role. This is a field of type `string`.
-- `savedPosts`: User's saved posts. This is a field of type `string`.
+- `role`: User's role. This is a field of type `string`.
 - `isEmailVerified`: Field indicating whether the user's email has been verified. This is a field of type `boolean`.
 
 ## Model Token
