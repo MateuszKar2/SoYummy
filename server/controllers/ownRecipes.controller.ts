@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
-import User from "../models/user.model";
-import Recipe, { RecipeDocument } from "../models/recipes.model";
+import Recipe from "../models/recipes.model";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 
