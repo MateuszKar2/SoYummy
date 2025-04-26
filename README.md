@@ -26,7 +26,7 @@ The **SoYummy** project is still in progress. We are continuously working on add
 
 This project is being developed collaboratively by:
 - **Mateusz Karpiński** - [GitHub Profile](https://github.com/MateuszKar2)
-- **[Collaborator's Name]** - [Collaborator's GitHub](#) *(Add your collaborator's GitHub profile here)*
+- **Mateusz Potocki** - [Collaborator's GitHub](https://github.com/potocki92)
 
 ## 🚀 Getting Started
 
