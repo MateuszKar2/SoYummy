@@ -1,4 +1,4 @@
-# SoYummy
+ # SoYummy
 
 **SoYummy** is a food-related web application that allows users to discover, search, and explore various recipes. It is a collaborative project that I am working on with a colleague to deepen our understanding of web development, particularly in the areas of front-end technologies and API integration.
 
